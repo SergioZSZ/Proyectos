@@ -1,0 +1,60 @@
+NoTerminales = { D P B E O R W U Y V N L Q X S M T H A K F C Z }
+Axioma = D
+Terminales = { id *= = put get return if let for int boolean string ; function > void ,  && ( ) entero cadena + { } }
+Producciones = { 
+D -> P
+P -> B P
+P -> F P
+P -> lambda
+
+E -> R O
+O -> && R O
+O -> lambda	
+R -> U W
+W -> > U W
+W -> lambda
+U -> V Y
+Y -> + V Y 
+Y -> lambda
+V -> id N
+N -> ( L )
+N -> lambda
+V -> ( E )
+V -> entero
+V -> cadena
+
+
+
+S -> id M 
+M -> = E ;
+M -> *= E ; 
+M -> ( L )
+S -> put E ;
+S -> get id ;
+S -> return X ;
+L -> E Q 
+L -> lambda
+Q -> , E Q 
+Q -> lambda
+X -> E
+
+
+B -> if ( E ) S
+B -> let id T ;
+B -> S
+B -> for ( id M ; E ; id M ) Z
+T -> int 
+T -> boolean 
+T -> string
+F -> function id H ( A ) Z
+Z -> { C }
+H -> T 
+H -> void
+A -> T id K 
+A -> void
+K -> , T id K 
+K -> lambda
+C -> B C 
+C -> lambda
+
+}

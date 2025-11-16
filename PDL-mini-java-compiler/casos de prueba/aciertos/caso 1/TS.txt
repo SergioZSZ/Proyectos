@@ -1,0 +1,79 @@
+CONTENIDO TS GLOBAL # 1:
+ 
+* LEXEMA: 'a' 
+Atributos: 
++ Tipo: 'entero' 
++ Despl: 0 
+--------- ---------- 
+* LEXEMA: 'b' 
+Atributos: 
++ Tipo: 'entero' 
++ Despl: 1 
+--------- ---------- 
+* LEXEMA: 'c' 
+Atributos: 
++ Tipo: 'entero' 
++ Despl: 2 
+--------- ---------- 
+* LEXEMA: 'sumar' 
+Atributos: 
++ Tipo: 'funct' 
++ NumParam: 2 
++ TipoParam01: 'entero' 
++ TipoParam02: 'entero' 
++ TipoRetorno: 'entero' 
++ EtiqFuncion: 'Etiqueta_3' 
+--------- ---------- 
+* LEXEMA: 'aa' 
+Atributos: 
++ Tipo: 'entero' 
++ Despl: 3 
+--------- ---------- 
+* LEXEMA: 'sumar2' 
+Atributos: 
++ Tipo: 'funct' 
++ NumParam: 2 
++ TipoParam01: 'entero' 
++ TipoParam02: 'entero' 
++ TipoRetorno: 'entero' 
++ EtiqFuncion: 'Etiqueta_1' 
+--------- ---------- 
+* LEXEMA: 'b_b' 
+Atributos: 
++ Tipo: 'entero' 
++ Despl: 4 
+-------------------------------------------------------------------------- 
+CONTENIDO TS sumar # 2:
+ 
+* LEXEMA: 'x' 
+Atributos: 
++ Tipo: 'entero' 
++ Despl: 0 
+--------- ---------- 
+* LEXEMA: 'y' 
+Atributos: 
++ Tipo: 'entero' 
++ Despl: 1 
+-------------------------------------------------------------------------- 
+CONTENIDO TS sumar2 # 3:
+ 
+* LEXEMA: 'x' 
+Atributos: 
++ Tipo: 'entero' 
++ Despl: 0 
+--------- ---------- 
+* LEXEMA: 'y' 
+Atributos: 
++ Tipo: 'entero' 
++ Despl: 1 
+--------- ---------- 
+* LEXEMA: 'z' 
+Atributos: 
++ Tipo: 'entero' 
++ Despl: 2 
+--------- ---------- 
+* LEXEMA: 'c' 
+Atributos: 
++ Tipo: 'cadena' 
++ Despl: 3 
+-------------------------------------------------------------------------- 

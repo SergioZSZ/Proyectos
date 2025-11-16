@@ -1,0 +1,42 @@
+CONTENIDO TS GLOBAL # 1:
+ 
+* LEXEMA: 'bol' 
+Atributos: 
++ Tipo: 'logico' 
++ Despl: 0 
+--------- ---------- 
+* LEXEMA: 'v' 
+Atributos: 
++ Tipo: 'entero' 
++ Despl: 1 
+--------- ---------- 
+* LEXEMA: 'w' 
+Atributos: 
++ Tipo: 'entero' 
++ Despl: 2 
+--------- ---------- 
+* LEXEMA: 'i' 
+Atributos: 
++ Tipo: 'entero' 
++ Despl: 3 
+--------- ---------- 
+* LEXEMA: 'contador' 
+Atributos: 
++ Tipo: 'entero' 
++ Despl: 4 
+--------- ---------- 
+* LEXEMA: 'potencia_3' 
+Atributos: 
++ Tipo: 'funct' 
++ NumParam: 1 
++ TipoParam01: 'entero' 
++ TipoRetorno: 'entero' 
++ EtiqFuncion: 'Etiqueta_9' 
+-------------------------------------------------------------------------- 
+CONTENIDO TS potencia_3 # 2:
+ 
+* LEXEMA: 'x' 
+Atributos: 
++ Tipo: 'entero' 
++ Despl: 0 
+-------------------------------------------------------------------------- 

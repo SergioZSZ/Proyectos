@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: adminuser
+      POSTGRES_PASSWORD: password1234
+      POSTGRES_DB: near_parkings
+    ports:
+      - "5434:5432"
+    volumes:
+      - near_parkings_pgdata:/var/lib/postgresql/data
+
+volumes:
+  near_parkings_pgdata:

@@ -1,0 +1,13 @@
+let bol boolean;
+/*comentar
+	io*/ 
+let v int; 
+	v = 0;
+let w int;
+	w = 1;
+let i int;
+for(i = 0; 5>i;i=i+1) { 
+		v = v +2;
+/* esperado && */
+	if(bol &* v>6) put v;
+	 }

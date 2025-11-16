@@ -1,0 +1,16 @@
+let a boolean;
+
+function esTrue boolean(boolean c){ return c;} 
+
+function sumar int (int x , int y){
+					return x+y;}
+let b int;
+
+function sumar2 int (int x, int y){ let z int;
+				let i int;
+				for(i=0;5>i;i=i+1){
+	
+					z = sumar(x,y);
+		}
+			return sumar(x,z);
+					}

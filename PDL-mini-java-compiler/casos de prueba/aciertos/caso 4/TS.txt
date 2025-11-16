@@ -1,0 +1,61 @@
+CONTENIDO TS GLOBAL # 1:
+ 
+* LEXEMA: 'c' 
+Atributos: 
++ Tipo: 'cadena' 
++ Despl: 0 
+--------- ---------- 
+* LEXEMA: 'i' 
+Atributos: 
++ Tipo: 'entero' 
++ Despl: 64 
+--------- ---------- 
+* LEXEMA: 'var1' 
+Atributos: 
++ Tipo: 'logico' 
++ Despl: 65 
+--------- ---------- 
+* LEXEMA: 'var2' 
+Atributos: 
++ Tipo: 'logico' 
++ Despl: 66 
+--------- ---------- 
+* LEXEMA: 'NadaDeNada' 
+Atributos: 
++ Tipo: 'funct' 
++ NumParam: 0 
++ TipoRetorno: 'vacio' 
++ EtiqFuncion: 'Etiqueta_8' 
+--------- ---------- 
+* LEXEMA: 'HaceAlgo' 
+Atributos: 
++ Tipo: 'funct' 
++ NumParam: 0 
++ TipoRetorno: 'vacio' 
++ EtiqFuncion: 'Etiqueta_1' 
+--------- ---------- 
+* LEXEMA: 'HaceAlgo2' 
+Atributos: 
++ Tipo: 'funct' 
++ NumParam: 1 
++ TipoParam01: 'cadena' 
++ TipoRetorno: 'vacio' 
++ EtiqFuncion: 'Etiqueta_7' 
+-------------------------------------------------------------------------- 
+CONTENIDO TS NadaDeNada # 2:
+ 
+* LEXEMA: 'c' 
+Atributos: 
++ Tipo: 'cadena' 
++ Despl: 0 
+-------------------------------------------------------------------------- 
+CONTENIDO TS HaceAlgo # 3:
+ 
+-------------------------------------------------------------------------- 
+CONTENIDO TS HaceAlgo2 # 4:
+ 
+* LEXEMA: 'var' 
+Atributos: 
++ Tipo: 'cadena' 
++ Despl: 0 
+-------------------------------------------------------------------------- 

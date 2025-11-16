@@ -1,0 +1,8 @@
+let a boolean;
+let b int;
+let c int;
+function sumar int (int x , int y){
+					return x+y;}	
+let z int;
+	/*parametro de funcion erroneo, a es logico, necesita un entero*/	
+	z = sumar(b,a);

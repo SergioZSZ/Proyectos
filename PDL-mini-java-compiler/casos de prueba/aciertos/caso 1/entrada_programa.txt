@@ -1,0 +1,20 @@
+let a int;
+a = 5;
+let b int;
+b = 6;
+let c int;
+c = 7;
+
+function sumar int (int x, int y){
+				return x+y ;}
+let aa int ;
+aa = sumar(a,b);
+
+function sumar2 int(int x, int y) { 	let z int ;
+					let c string;
+					c = 'molesto';
+					z = x+y;
+					return z ;
+	}
+let b_b int;
+b_b = sumar2(aa,a);

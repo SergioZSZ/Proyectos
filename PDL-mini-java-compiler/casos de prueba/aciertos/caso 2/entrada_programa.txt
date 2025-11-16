@@ -1,0 +1,14 @@
+let t string;	
+	t = 'texto';
+		
+	function print string ( string var) {	
+						let c string; c = var;	return var;}
+let a int ; a = 4;
+let b int; b = 3;
+let c int; c = 2;
+	if(b>c && (a>b)) return a;
+		
+
+	function mult int (int x, int y) { 	let z int;
+					  	z *= x;
+						return z;	}

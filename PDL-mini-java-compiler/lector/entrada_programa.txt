@@ -1,0 +1,18 @@
+let c string ;
+let i int;
+
+	for(i = 0; 15 >i; i=i+1) {
+		
+			c = 'hola';	 }
+
+let var1 boolean;
+let var2 boolean;
+	if(var1 && var2) c = 'adios';
+
+function NadaDeNada void (void) { let c string;
+				  c = 'esta funcion no sirve de nada' ;
+				}
+NadaDeNada();
+
+function HaceAlgo void (void) { c = 'hace algo'; }
+function HaceAlgo2 void (string var) { var = 'esta funcion tambien';}

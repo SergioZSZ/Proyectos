@@ -1,0 +1,9 @@
+let i int;
+let c int;
+	for(i = 0; 15>i; i=i+1) {
+		/*c tipo distinto */
+			c = 'hola';	 }
+
+let var1 boolean;
+let var2 boolean;
+	if(var1 && var2) c = 'adios';

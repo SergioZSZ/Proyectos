@@ -1,0 +1,68 @@
+CONTENIDO TS GLOBAL # 1:
+ 
+* LEXEMA: 't' 
+Atributos: 
++ Tipo: 'cadena' 
++ Despl: 0 
+--------- ---------- 
+* LEXEMA: 'print' 
+Atributos: 
++ Tipo: 'funct' 
++ NumParam: 1 
++ TipoParam01: 'cadena' 
++ TipoRetorno: 'cadena' 
++ EtiqFuncion: 'Etiqueta_1' 
+--------- ---------- 
+* LEXEMA: 'a' 
+Atributos: 
++ Tipo: 'entero' 
++ Despl: 64 
+--------- ---------- 
+* LEXEMA: 'b' 
+Atributos: 
++ Tipo: 'entero' 
++ Despl: 65 
+--------- ---------- 
+* LEXEMA: 'c' 
+Atributos: 
++ Tipo: 'entero' 
++ Despl: 66 
+--------- ---------- 
+* LEXEMA: 'mult' 
+Atributos: 
++ Tipo: 'funct' 
++ NumParam: 2 
++ TipoParam01: 'entero' 
++ TipoParam02: 'entero' 
++ TipoRetorno: 'entero' 
++ EtiqFuncion: 'Etiqueta_3' 
+-------------------------------------------------------------------------- 
+CONTENIDO TS print # 2:
+ 
+* LEXEMA: 'var' 
+Atributos: 
++ Tipo: 'cadena' 
++ Despl: 0 
+--------- ---------- 
+* LEXEMA: 'c' 
+Atributos: 
++ Tipo: 'cadena' 
++ Despl: 64 
+-------------------------------------------------------------------------- 
+CONTENIDO TS mult # 3:
+ 
+* LEXEMA: 'x' 
+Atributos: 
++ Tipo: 'entero' 
++ Despl: 0 
+--------- ---------- 
+* LEXEMA: 'y' 
+Atributos: 
++ Tipo: 'entero' 
++ Despl: 1 
+--------- ---------- 
+* LEXEMA: 'z' 
+Atributos: 
++ Tipo: 'entero' 
++ Despl: 2 
+-------------------------------------------------------------------------- 

@@ -1,0 +1,17 @@
+La carpeta 'pdl' es el proyecto de java, dentro de ella se encuentra
+la carpeta 'src' propia de los java proyects y dentro todos los paquetes
+realizados para el proyecto. La clase 'lector'ubicada dentro del paquete 'lector'
+es el ejecutable y para realizar la ejecución cambiar en las siguientes 
+variables metiendo dentro del 'new File( "/*AQUI*/" );' la dirección de los
+.txt en los que se quiera guardar los siguientes ficheros:
+
+	-fd: archivo del cual se leerá y procesará el programa
+	-fichero_tokens: archivo donde se guardarán los tokens post-ejecución
+	-fichero_parser: archivo donde se guardará el parse post-ejecución
+	-fichero_TS: archivo donde se guardarán las tablas de símbolos post-ejecución
+	-fichero_errores: archivo donde se guardarán los errores post-ejecución
+
+La carpeta 'casos de prueba' contiene los archivos generados de 
+	-EN CASO DE ACIERTO:tokens, parser, arbol sintáctico,TS
+	-EN CASO DE ERROR:errores
+Estos archivos se generan a partir de lo que haya en 'entrada_programa'
