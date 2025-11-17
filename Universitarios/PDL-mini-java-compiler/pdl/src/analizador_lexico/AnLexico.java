@@ -1,9 +1,7 @@
 package analizador_lexico;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import TS.PILA_TABLAS;
-import TS.TS;
 
 import gestor_errores.gestor_error;
 
