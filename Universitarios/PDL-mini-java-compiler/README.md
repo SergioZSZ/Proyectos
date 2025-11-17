@@ -14,7 +14,7 @@ Este proyecto procesa un programa Java reducido, analiza su estructura y genera 
 ---
 
 ## Estructura del proyecto
-
+```
 PDL-mini-java-compiler
 │
 ├─ lector/                         # Archivos de entrada/salida del compilador
@@ -30,9 +30,7 @@ PDL-mini-java-compiler
         ├─ analizador_sintactico/  # Analizador sintáctico descendente
         ├─ TS/                     # Pila de tablas y gestión de símbolos
         └─ lector/                 # Módulo principal (lector.java)
-
-
-
+```
 ---
 
 ## Funcionamiento del compilador
@@ -94,7 +92,7 @@ El archivo `lector.java`:
 
 ---
 
-## ▶️ Compilar y ejecutar (VS Code / terminal)
+## Compilar y ejecutar (VS Code / terminal)
 
 Ejecutar siempre desde: 
 pdl/src
