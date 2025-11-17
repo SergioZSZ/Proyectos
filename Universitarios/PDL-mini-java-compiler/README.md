@@ -13,34 +13,35 @@ Este proyecto procesa un programa Java reducido, analiza su estructura y genera 
 
 ---
 
-## 📂 Estructura del proyecto
+## Estructura del proyecto
 
 PDL-mini-java-compiler
 │
-├─ lector/ # Archivos de entrada/salida del compilador
-│ ├─ entrada_programa.txt # Programa de entrada a analizar
-│ ├─ tokens.txt # Tokens generados por el análisis léxico
-│ ├─ parse.txt # Resultado del análisis sintáctico
-│ ├─ TS.txt # Tablas de símbolos generadas
-│ └─ errores.txt # Errores detectados durante la compilación
+├─ lector/                         # Archivos de entrada/salida del compilador
+│   ├─ entrada_programa.txt        # Programa de entrada a analizar
+│   ├─ tokens.txt                  # Tokens generados por el análisis léxico
+│   ├─ parse.txt                   # Resultado del análisis sintáctico
+│   ├─ TS.txt                      # Tablas de símbolos generadas
+│   └─ errores.txt                 # Errores detectados durante la compilación
 │
 └─ pdl/
-└─ src/
-├─ analizador_lexico/ # Autómatas, tabla de tokens, clases auxiliares
-├─ analizador_sintactico/ # Analizador sintáctico descendente
-├─ TS/ # Pila de tablas y gestión de símbolos
-└─ lector/ # Módulo principal (lector.java)
+    └─ src/
+        ├─ analizador_lexico/      # Autómatas, tabla de tokens, clases auxiliares
+        ├─ analizador_sintactico/  # Analizador sintáctico descendente
+        ├─ TS/                     # Pila de tablas y gestión de símbolos
+        └─ lector/                 # Módulo principal (lector.java)
+
 
 
 ---
 
-## 🧠 Funcionamiento del compilador
+## Funcionamiento del compilador
 
 El mini-compilador sigue el flujo clásico de un procesador de lenguajes:
 
 ### 1. Lectura de entrada  
 El archivo de entrada es:
-
+`lector/entrada_programa.txt`
 
 ---
 
