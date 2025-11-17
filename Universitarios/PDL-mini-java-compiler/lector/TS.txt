@@ -25,7 +25,7 @@ Atributos:
 + Tipo: 'funct' 
 + NumParam: 0 
 + TipoRetorno: 'vacio' 
-+ EtiqFuncion: 'Etiqueta_4' 
++ EtiqFuncion: 'Etiqueta_8' 
 --------- ---------- 
 * LEXEMA: 'HaceAlgo' 
 Atributos: 
@@ -40,7 +40,7 @@ Atributos:
 + NumParam: 1 
 + TipoParam01: 'cadena' 
 + TipoRetorno: 'vacio' 
-+ EtiqFuncion: 'Etiqueta_2' 
++ EtiqFuncion: 'Etiqueta_3' 
 -------------------------------------------------------------------------- 
 CONTENIDO TS NadaDeNada # 2:
  

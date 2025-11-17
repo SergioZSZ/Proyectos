@@ -3,38 +3,31 @@ package lector;
 
 import java.io.BufferedReader;
 
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.LinkedList;
 
 import TS.PILA_TABLAS;
-import TS.TS;
-import analizador_lexico.AnLexico;
-import analizador_lexico.Automata;
-import analizador_lexico.TokenTablas;
 import analizador_lexico.Tokens;
 import analizador_sintactico.AnSintactico;
 
 
 public class lector {	
     public static void main(String[] args) throws IOException {
-
+    	 System.out.println(new File(".").getAbsolutePath());
         // ARCHIVO DEL CUAL SE REALIZA EL ANÁLISIS
         // Se asume que ejecutas el programa desde la raíz del proyecto
         // y que existe la carpeta "lector" con los txt dentro.
-        File fd = new File("lector/entrada_programa.txt");
-        FileReader fr = new FileReader(fd);
+		File fd = new File("../../lector/entrada_programa.txt");        FileReader fr = new FileReader(fd);
         BufferedReader br = new BufferedReader(fr);
 
-        // DIRECCIONES DE LOS ARCHIVOS DE SALIDA
-        File fichero_tokens   = new File("lector/tokens.txt");
-        File fichero_parser   = new File("lector/parse.txt");
-        File fichero_TS       = new File("lector/TS.txt");
-        File fichero_errores  = new File("lector/errores.txt");
+        // DIRECCIONES DE LOS ARCHIVOS DE SALIDA DESDE SRC
+        File fichero_tokens   = new File("../../lector/tokens.txt");
+		File fichero_parser   = new File("../../lector/parse.txt");
+		File fichero_TS       = new File("../../lector/TS.txt");
+		File fichero_errores  = new File("../../lector/errores.txt");
 
         FileWriter fw  = new FileWriter(fichero_tokens);
         FileWriter fw2 = new FileWriter(fichero_parser);

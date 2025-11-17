@@ -5,12 +5,9 @@ import java.util.Stack;
 
 import java.util.LinkedList;
 import TS.PILA_TABLAS;
-import TS.TS;
 import analizador_lexico.AnLexico;
-import analizador_lexico.Automata;
 import analizador_lexico.TokenTablas;
 import analizador_lexico.Tokens;
-import analizador_lexico.estado;
 import analizador_semantico.AnSemantico;
 import analizador_semantico.Expresion;
 import analizador_semantico.PilaAuxTS_tabla;
@@ -90,7 +87,6 @@ public class AnSintactico {
 			
 			Expresion t = pila.pop();
 
-			String terminal = t.getLetra();
 			aux.add(t);
 			parser.add(tabla.getEstado(token, c).getRegla()+1);
 
@@ -141,11 +137,10 @@ public class AnSintactico {
 
 	//ALGORITMO DESCENDENTE POR TABLAS
 	public String algoritmo() {
-		Stack<Expresion> pila = new Stack();
-		LinkedList<Integer> parser = new LinkedList();
+		Stack<Expresion> pila = new Stack<Expresion>();
+		LinkedList<Integer> parser = new LinkedList<Integer>();
 		pila.push(new Expresion("$",null));
 		pila.push(new Expresion("D",null));
-		int n = 0;
 		boolean end = false;
 
 		PilaAuxTS_tabla vuelta;

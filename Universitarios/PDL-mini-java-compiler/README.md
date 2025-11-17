@@ -1,77 +1,127 @@
-# mini-java-compiler
-Analizador Léxico, Sintáctico y Semántico en Java  
-Proyecto académico – Procesadores de Lenguajes (UPM)
+# PDL-Mini-Java-Compiler
 
-## Descripción del proyecto
-Este proyecto implementa el front-end completo de un compilador educativo para un lenguaje de programación similar a Java. Incluye:
+Proyecto académico desarrollado en la asignatura **Procesadores de Lenguajes (PDL)** cuyo objetivo es implementar un **mini compilador de Java** compuesto por:
 
-- Analizador léxico basado en un autómata finito determinista.
-- Analizador sintáctico descendente LL(1) mediante tabla predictiva.
-- Analizador semántico usando traducción dirigida por la sintaxis.
-- Gestión de tabla de símbolos con ámbitos globales y locales.
-- Sistema de gestión de errores léxicos, sintácticos y semánticos.
-- Generación automática de archivos de salida: tokens, parse, tabla de símbolos y errores.
+- Analizador léxico  
+- Analizador sintáctico descendente  
+- Gestión de tabla de símbolos (TS) mediante pila de tablas  
+- Detección y reporte de errores léxicos, sintácticos y semánticos  
+- Generación automática de ficheros de salida (tokens, parse, TS, errores)  
+- Módulo “lector” que integra y ejecuta todo el proceso de compilación
 
-## Estructura del repositorio
-```
-mini-java-compiler/
-    pdl/
-        src/
-            analizador_lexico/
-            analizador_sintactico/
-            analizador_semantico/
-            TS/
-            gestor_errores/
-            lector/
-                lector.java
-    lector/
-        entrada_programa.txt
-        tokens.txt
-        parse.txt
-        TS.txt
-        errores.txt
-    casos_de_prueba/
-        aciertos/
-        errores/
-README.md
-```
+Este proyecto procesa un programa Java reducido, analiza su estructura y genera los artefactos propios de la primera fase de un compilador.
 
-## Funcionamiento del directorio `lector`
-El proyecto trabaja utilizando la carpeta `lector/` como punto de entrada y salida:
+---
 
-- **Entrada del programa fuente:**  
-  `lector/entrada_programa.txt`
+## 📂 Estructura del proyecto
 
-- **Archivos generados automáticamente:**  
-  - `lector/tokens.txt`  
-  - `lector/parse.txt`  
-  - `lector/TS.txt`  
-  - `lector/errores.txt`
+PDL-mini-java-compiler
+│
+├─ lector/ # Archivos de entrada/salida del compilador
+│ ├─ entrada_programa.txt # Programa de entrada a analizar
+│ ├─ tokens.txt # Tokens generados por el análisis léxico
+│ ├─ parse.txt # Resultado del análisis sintáctico
+│ ├─ TS.txt # Tablas de símbolos generadas
+│ └─ errores.txt # Errores detectados durante la compilación
+│
+└─ pdl/
+└─ src/
+├─ analizador_lexico/ # Autómatas, tabla de tokens, clases auxiliares
+├─ analizador_sintactico/ # Analizador sintáctico descendente
+├─ TS/ # Pila de tablas y gestión de símbolos
+└─ lector/ # Módulo principal (lector.java)
 
-El analizador sobrescribe estos archivos en cada ejecución.
 
-## Compilación
-Desde la raíz del proyecto:
+---
 
-```
-javac -d bin pdl/src/**/**/*.java
-```
+## 🧠 Funcionamiento del compilador
 
-En caso de problemas con la expansión `**`, puede compilarse módulo a módulo o utilizar un IDE como IntelliJ o Eclipse.
+El mini-compilador sigue el flujo clásico de un procesador de lenguajes:
 
-## Ejecución
-1. Editar `lector/entrada_programa.txt` para añadir el programa que se desea analizar.
-2. Ejecutar desde la raíz del proyecto:
+### 1. Lectura de entrada  
+El archivo de entrada es:
 
-```
-java -cp bin lector.lector
-```
 
-3. Los resultados aparecerán en la carpeta `lector/`.
+---
 
-## Casos de prueba
-El directorio `casos_de_prueba/` contiene ejemplos correctos y con errores, junto con su salida correspondiente: tokens, parse, árboles sintácticos, tabla de símbolos y mensajes de error.
+### 2. Análisis Léxico  
+Ubicado en `analizador_lexico/`:
 
-## Autor
-Sergio Zaballos Herrera  
-ETSIINF – Universidad Politécnica de Madrid
+- Reconoce identificadores, constantes, operadores, símbolos…
+- Implementado mediante autómatas
+- Genera objetos `Tokens`
+- Reporta errores léxicos si los hay  
+- Escribe la salida en `tokens.txt`
+
+---
+
+### 3. Análisis Sintáctico  
+Ubicado en `analizador_sintactico/`:
+
+- Implementación recursiva descendente
+- Comprueba que la secuencia de tokens cumple la gramática
+- Detecta y reporta errores sintácticos
+- Escrita en `parse.txt`
+
+---
+
+### 4. Tabla de Símbolos  
+Ubicado en `TS/`:
+
+- Implementa una **pila de tablas** (modela ámbitos)
+- Cada bloque o estructura crea un nuevo nivel
+- Se registran variables, tipos, posiciones y atributos semánticos
+
+Salida: `TS.txt`
+
+---
+
+### 5. Gestión de errores  
+Si se produce un error durante cualquier fase:
+
+- Se detiene la compilación  
+- Se genera exclusivamente `errores.txt`  
+
+---
+
+### 6. Integración con `lector.java`  
+El archivo `lector.java`:
+
+- Ejecuta todas las fases del compilador  
+- Genera los ficheros `tokens.txt`, `parse.txt`, `TS.txt` o `errores.txt`  
+- Controla la entrada y salida del análisis  
+
+---
+
+## ▶️ Compilar y ejecutar (VS Code / terminal)
+
+Ejecutar siempre desde: 
+pdl/src
+
+### 1. Compilar todo el proyecto:
+
+```bat
+javac TS\*.java analizador_lexico\*.java analizador_sintactico\*.java lector\*.java
+
+java lector.lector
+
+
+
+### 2. Ejecutar el compilador:
+
+- lector/tokens.txt
+- lector/parse.txt
+- lector/TS.txt
+- lector/errores.txt (solo si hay errores)
+
+### 3. Archivos generados:
+
+`lector/tokens.txt`
+`lector/parse.txt`
+`lector/TS.txt`
+`lector/errores.txt` (solo si hay errores)
+
+## 4. Autor:
+Sergio Zaballos Herrera
+Grado en Ingeniería Informática — ETSIINF UPM
+Asignatura: Procesadores de Lenguajes (PDL)
