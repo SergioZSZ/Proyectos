@@ -114,3 +114,46 @@ near-parkings/
 └─ frontend/
    ├─ client.py
    └─ requirements_frontend.txt
+```
+## Cómo iniciar el proyecto
+
+### Requisitos
+- Docker  
+- Docker Compose
+- python
+
+### Pasos
+
+1. BACKEND: Desde la raíz del proyecto, ejecutar:
+
+```bash
+docker compose up --build
+```
+Esto levanta:
+
+- db → PostgreSQL 16 (expuesto en localhost:5434)
+- migrate → primera migración a la db
+- backend → FastAPI (expuesto en localhost:8000)
+
+Acceder a la documentación de la API: ``` http://localhost:8000/docs ```
+
+Para detener los contenedores se debe hacer ```docker compose down```
+
+
+2. FRONTEND: Desde la carpeta ```/frontend```, ejecutar:
+```bash
+python -m venv .venv
+```
+generando un entorno en el cual instalaremos las dependencias del ```requirements_frontend.txt```
+
+lo activamos con:
+  Windows:```.venv\Scripts\activate ```
+  Linux:```.venv/bin/Activate.ps1```
+
+realizamos: ```pip install -r requirements_frontend.txt``` para instalar dependencias en el
+
+en la misma carpeta ```/frontend``` ejecutamos ```python client.py```
+
+
+
+

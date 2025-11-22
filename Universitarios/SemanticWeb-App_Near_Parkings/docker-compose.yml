@@ -20,5 +20,17 @@ services:
     - ./backend:/app
     depends_on:
     - db
+    environment:
+      DATABASE_URL: postgresql+psycopg://adminuser:password1234@db:5432/near_parkings
+
+  migrate:
+    build:
+      context: ./backend
+    working_dir: /app
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql+psycopg://adminuser:password1234@db:5432/near_parkings
+    command: alembic upgrade head
 volumes:
   near_parkings_pgdata:
