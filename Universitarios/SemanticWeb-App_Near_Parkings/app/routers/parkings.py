@@ -34,7 +34,7 @@ async def list_parkings(
 
         _id = r.id
         _fam = r.family
-        _name = r.name
+        _name = r.name or "sin email"
         _mail = r.email
         _icon = r.URLIcon
         _addr = r.streetAddress
@@ -64,7 +64,8 @@ async def list_parkings(
                 continue
         if emt is not None and _emt != emt:
             continue
-
+        if _mail is None:
+            _mail = "sin email"
         rows.append(ParkingsBase(
             identifier=_id,
             family=int(_fam),
@@ -120,7 +121,7 @@ async def get_nearby_parkings(
                 identifier = r.id,
                 family = str(r2.family),
                 name = str(r2.name),
-                email= str(r2.email or "Sin mail"),    
+                email= str(r2.email or "sin email"),    
                 streetAddress=str(r2.streetAddress),
                 postalCode=str(r2.postalCode),
                 autonomousCommunity=str(r2.nautonomousCommunity),
@@ -170,7 +171,7 @@ async def getParking(id: int):
     identifier = id,
     family = str(primer_elem.family),
     name = str(primer_elem.name),
-    email= str(primer_elem.email or "Sin mail"),    
+    email= str(primer_elem.email or "sin email"),    
     streetAddress=str(primer_elem.streetAddress),
     postalCode=str(primer_elem.postalCode),
     autonomousCommunity=str(primer_elem.nautonomousCommunity),

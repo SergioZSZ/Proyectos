@@ -32,7 +32,7 @@ async def get_favoritos(
     skip: int = Query(0, ge=0),
     limit: int = Query(50, ge=1, le=200),
     db: Session = Depends(get_db),
-):
+):  
     items = cruds.list_favoritos(db, q=q, skip=skip, limit=limit)
     total = cruds.count_favoritos(db, q=q)
     return cruds.list_favoritos(db, q=q, skip=skip, limit=limit)
@@ -61,6 +61,10 @@ async def create_favorito(
             detail=f"No existe ningún parking con id={data.identifier} en el RDF."
         )
 
+    #objeto sin mail = Sin email
+    if(data.email is None):
+        data.email = "Sin email"
+        
     obj = cruds.create_favorito(db, data)
 
     return obj
