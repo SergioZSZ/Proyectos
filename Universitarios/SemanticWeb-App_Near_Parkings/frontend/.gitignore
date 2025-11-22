@@ -1,4 +1,4 @@
-# === Entorno virtual ===
+# === Entorno virtual frontend ===
 .venv/
 venv/
 env/
