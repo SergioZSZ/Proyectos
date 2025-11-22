@@ -1,3 +1,4 @@
+#docker compose para desplegar en local
 services:
   db:
     image: postgres:16
@@ -10,5 +11,14 @@ services:
     volumes:
       - near_parkings_pgdata:/var/lib/postgresql/data
 
+  backend:
+    build:
+      context: ./backend
+    ports:
+    - "8000:8000"
+    volumes:
+    - ./backend:/app
+    depends_on:
+    - db
 volumes:
   near_parkings_pgdata:
