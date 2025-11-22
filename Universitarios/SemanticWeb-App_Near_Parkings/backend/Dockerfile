@@ -16,4 +16,4 @@ COPY . .
 ENV PORT=8080
 
 # Comando de arranque
-CMD ["uvicorn", "app.main:app", "--reload", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["uvicorn", "app.main:app", "--reload", "--host", "0.0.0.0", "--port", "8000"]
