@@ -152,8 +152,9 @@ alembic upgrade head
 # 7. Cómo iniciar el proyecto
 
 1. Crear y activar entorno virtual.  
-2. Instalar dependencias (`pip install -r requirements.txt`).  
-3. Levantar la base de datos:  
+2. Instalar dependencias backend(`pip install -r requirements.txt`).  
+2. Instalar dependencias frontend(client) (`pip install -r requirements_frontend.txt`).  
+4. Levantar la base de datos:  
 ```
 docker compose up -d
 ```  
