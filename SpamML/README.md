@@ -26,7 +26,7 @@ Es un proyecto adecuado como introducción a NLP y clasificación de texto.
 ---
 
 ## Estructura del proyecto
-'''
+```
 SpamML/
 │
 ├── data/
@@ -42,7 +42,7 @@ SpamML/
 │
 ├── model_selecter.py
 └── predict_example.py
-'''
+```
 
 ---
 
