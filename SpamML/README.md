@@ -110,7 +110,7 @@ weighted avg       0.97      0.97      0.97      1115
 ## Predicción de nuevos mensajes
 El script ```predict_example.py``` permite cargar el modelo exportado y clasificar nuevo texto guardando los resultados en ```Predicciones de Ejemplo.txt```
 
-Limitaciones del dataset
+## Limitaciones del dataset
 
 - El conjunto SMSSpamCollection contiene únicamente mensajes SMS, por lo que presenta limitaciones:
 - No está diseñado para detectar spam moderno en correos electrónicos
