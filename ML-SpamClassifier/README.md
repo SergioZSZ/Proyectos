@@ -78,13 +78,13 @@ POST /mail/isSpam
 ```
 Body:
 {
-  "message": "Win a FREE iPhone now!"
+  "message": "Win a free tickets, No prize! click on the link below."
 }
 ```
 Respuesta:
 ```
 {
-  "message": "Win a FREE iPhone now!",
+  "message": "Win a free tickets, No prize! click on the link below.",
   "tipo": "SPAM"
 }
 ```
