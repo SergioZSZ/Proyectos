@@ -1,0 +1,26 @@
+---- ENTRENAMIENTO ----
+Accuracy: 1.0
+Precision: 1.0
+Recall: 1.0
+F1: 1.0
+
+---- TEST ----
+Accuracy: 0.9704035874439462
+Precision: 1.0
+Recall: 0.7785234899328859
+F1: 0.8754716981132076
+
+Matriz de confusión (test):
+[[966   0]
+ [ 33 116]]
+
+Reporte de clasificación (test):
+              precision    recall  f1-score   support
+
+           0       0.97      1.00      0.98       966
+           1       1.00      0.78      0.88       149
+
+    accuracy                           0.97      1115
+   macro avg       0.98      0.89      0.93      1115
+weighted avg       0.97      0.97      0.97      1115
+

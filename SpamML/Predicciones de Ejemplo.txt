@@ -1,0 +1,80 @@
+================================
+Mensaje: WIN a free prize now! Click the link to claim.
+Predicción: SPAM 
+
+================================
+Mensaje: Hola, te mando el documento actualizado.
+Predicción: HAM 
+
+================================
+Mensaje: Limited offer! Get your reward before midnight.
+Predicción: HAM 
+
+================================
+Mensaje: Tu pedido ha sido enviado y llegará mañana.
+Predicción: HAM 
+
+================================
+Mensaje: Congratulations, you've been selected for a special promotion!
+Predicción: HAM 
+
+================================
+Mensaje: Reunión confirmada para mañana a las 10.
+Predicción: HAM 
+
+================================
+Mensaje: URGENT! Your account will be suspended unless you verify now.
+Predicción: HAM 
+
+================================
+Mensaje: Puedes revisar este archivo cuando tengas tiempo.
+Predicción: HAM 
+
+================================
+Mensaje: You won a cash prize! Reply with your info.
+Predicción: SPAM 
+
+================================
+Mensaje: Recordatorio: tienes una cita médica el jueves.
+Predicción: HAM 
+
+================================
+Mensaje: Claim your free voucher before it expires.
+Predicción: SPAM 
+
+================================
+Mensaje: El paquete está listo para recoger en la oficina.
+Predicción: HAM 
+
+================================
+Mensaje: Don't miss this chance to earn money fast!
+Predicción: HAM 
+
+================================
+Mensaje: Gracias por tu ayuda con el proyecto.
+Predicción: HAM 
+
+================================
+Mensaje: Important update: your bank account requires verification.
+Predicción: HAM 
+
+================================
+Mensaje: Aquí tienes el resumen que pediste el otro día.
+Predicción: HAM 
+
+================================
+Mensaje: FREE entry to the event! Register now.
+Predicción: HAM 
+
+================================
+Mensaje: La reunión semanal se pasa al viernes.
+Predicción: HAM 
+
+================================
+Mensaje: You've been chosen for an exclusive money reward!
+Predicción: HAM 
+
+================================
+Mensaje: ¿Puedes enviarme el informe cuando esté listo?
+Predicción: HAM 
+

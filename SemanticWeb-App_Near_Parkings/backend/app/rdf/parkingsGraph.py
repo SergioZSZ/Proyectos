@@ -2,7 +2,7 @@ from fastapi import requests
 from rdflib import Graph, Namespace, Literal, XSD
 from rdflib.plugins.sparql import prepareQuery
 
-DATA_FILE = "https://raw.githubusercontent.com/SergioZSZ/Proyectos/refs/heads/main/Universitarios/SemanticWeb-App_Near_Parkings/backend/app/rdf/parkings-with-links.ttl"
+DATA_FILE = "https://raw.githubusercontent.com/SergioZSZ/Proyectos/refs/heads/main/SemanticWeb-App_Near_Parkings/backend/app/rdf/parkings-with-links.ttl"
 
 SCHEMA = Namespace("http://schema.org/")
 MY = Namespace("https://data.smartcitymadrid.es/ontology/parking#")
