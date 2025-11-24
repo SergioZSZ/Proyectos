@@ -2,3 +2,4 @@
 /app/__pycache__
 /app/routers/__pycache__
 /app/schemas/__pycache__
+/model/__pycache__
