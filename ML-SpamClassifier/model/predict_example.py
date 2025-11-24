@@ -6,7 +6,7 @@ MODEL_PATH = "model/models/modelSVM.joblib"
 #Cargar modelo
 model = joblib.load(MODEL_PATH)
 
-#Ejemplos de correos
+#Ejemplos de correos, funciona mejor con un modelo entrenado con SMSSpamCollection
 mensajes = [
     "WIN a free prize now! Click the link to claim.",
     "Hi, I'm sending you the updated document.",
@@ -34,12 +34,15 @@ mensajes = [
 preds = model.predict(mensajes)
 
 #Mostrar resultados
+stdout = sys.stdout
 sys.stdout = open("model/Predicciones de Ejemplo.txt","w")
 for text, pred in zip(mensajes, preds):
     label = "SPAM" if pred == 1 else "HAM"
     print("================================")
     print("Mensaje:", text)
     print("Predicción:", label,"\n")
+    
+sys.stdout=stdout
     
 
 

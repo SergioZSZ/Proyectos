@@ -29,7 +29,9 @@ ML-SpamClassifier/
 │   ├── models/
 │   │   └── SpamModelSVM.joblib
 │   └── model_selecter.py
-│   └──predict_example.py
+│   └── predict_example.py
+│   └── cleanText.py        
+│   └── evaluateclf.py
 │
 ├── requirements.txt
 └── README.md
@@ -39,9 +41,9 @@ ML-SpamClassifier/
 El script model_selecter.py:
 1. Carga el dataset
 2. Divide los datos con estratificación
-3. Construye pipelines TF-IDF + modelo
+3. Construye pipelines TF-IDF + modelo preprocesando el texto con ```clean_text```, buscando      unigramas y bigramas + definiendo parámetros de actuación en cuanto nº de aparición de palabras
 4. Entrena Logistic Regression, Random Forest y SVM
-5. Evalúa cada modelo con métricas detalladas
+5. Evalúa cada modelo con métricas detalladas con ```evaluate_clf```
 6. Selecciona y exporta el mejor modelo
 7. Guarda métricas en model/metricasSpam/
 
@@ -56,7 +58,7 @@ Incluyen:
 - Recall
 - F1-score
 - Matriz de confusión
-- Classification Report
+
 
 ## Predicción de nuevos mensajes
 El archivo ```predict_example.py``` permite cargar el modelo exportado y clasificar nuevos textos.
@@ -88,7 +90,7 @@ Respuesta:
   "tipo": "SPAM"
 }
 ```
-## Limitaciones del dataset
+## Limitaciones del dataset SSMSpamCollection
 El dataset:
 - Solo contiene mensajes SMS no muy largos
 - No incluye spam moderno
