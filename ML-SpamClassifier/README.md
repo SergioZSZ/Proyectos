@@ -13,6 +13,10 @@ Incluye procesamiento de texto con TF-IDF, entrenamiento de varios modelos super
 - Pydantic
 - joblib
 
+## Generar entorno
+- ```python -m venv .venv``` para generar el entorno en el que instalaremos las dependencias
+- ```pip install -r requirements.txt``` dependencias necesarias para ejecución
+
 ## Estructura del proyecto
 ```
 ML-SpamClassifier/
@@ -36,6 +40,17 @@ ML-SpamClassifier/
 ├── requirements.txt
 └── README.md
 ```
+
+## Preprocesado de texto
+se realiza desde la ```función clean_test()``` de ```cleanText.py```:
+- El pipeline utiliza un preprocesamiento avanzado:
+- Conversión a minúsculas
+- Eliminación de URLs, emails, HTML y números
+- Eliminación de signos de puntuación
+- Stopwords (NLTK)
+- Lematización (WordNet)
+- Tokenización
+- Limpieza final de espacios
 
 ## Entrenamiento del modelo
 El script model_selecter.py:
