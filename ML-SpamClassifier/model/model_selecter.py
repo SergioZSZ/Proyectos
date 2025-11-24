@@ -11,8 +11,8 @@ from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import (precision_score,accuracy_score,recall_score,f1_score, confusion_matrix,classification_report)
 
-os.makedirs("metricasSpam",exist_ok=True)
-os.makedirs("models",exist_ok=True)
+os.makedirs("model/metricasSpam",exist_ok=True)
+os.makedirs("model/models",exist_ok=True)
 
 
 
@@ -41,8 +41,7 @@ def evaluate_clf(model, trainx,trainy,testx,testy):
 
 ####################################################################################
 #importamos dataset 
-BASE_DIR =  r"C:\Users\jzaba\Documents\GitHub\Proyectos\ML-SpamClassifier"
-file_path = os.path.join(BASE_DIR, "data", "SMSSpamCollection")
+file_path = "model/data/SMSSpamCollection"
 
 df = pd.read_csv(
     file_path,                  #path
@@ -81,16 +80,16 @@ pipeRF.fit(trainx,trainy)
 pipeSVM.fit(trainx,trainy)
 
 #los testeamos enviando las metricas a sus respectivos txt para decidir cual usar
-sys.stdout = open("metricasSpam/LogisticRegression.txt", "w")
+sys.stdout = open("model/metricasSpam/LogisticRegression.txt", "w")
 evaluate_clf(pipeLR,trainx,trainy,testx,testy)
 sys.stdout.close()
-sys.stdout = open("metricasSpam/RandomForest.txt", "w")
+sys.stdout = open("model/metricasSpam/RandomForest.txt", "w")
 evaluate_clf(pipeRF,trainx,trainy,testx,testy)
 sys.stdout.close()
-sys.stdout = open("metricasSpam/SVM.txt", "w")
+sys.stdout = open("model/metricasSpam/SVM.txt", "w")
 evaluate_clf(pipeSVM,trainx,trainy,testx,testy)
 sys.stdout.close()
 
 #exportamos el que nos cuadre mas
-joblib.dump(pipeLR, "models/SpamModelLR.joblib")
+joblib.dump(pipeLR, "model/models/SpamModelLR.joblib")
 

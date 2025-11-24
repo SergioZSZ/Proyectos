@@ -1,0 +1,1 @@
+from .mail import MailBase, MailInput,MailOutput, Tipo
