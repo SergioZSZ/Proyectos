@@ -42,6 +42,7 @@ SpamML/
 │
 ├── model_selecter.py
 └── predict_example.py
+└── requirements.txt
 ```
 
 ---
