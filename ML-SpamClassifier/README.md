@@ -90,10 +90,22 @@ Respuesta:
 ```
 ## Limitaciones del dataset
 El dataset:
-- Solo contiene mensajes SMS
+- Solo contiene mensajes SMS no muy largos
 - No incluye spam moderno
 - No detecta phishing avanzado
 - Es un dataset educativo, no orientado a producción
+
+Para que un sistema de detección de spam sea realmente preciso en un entorno real, el modelo debe entrenarse con datos que representen fielmente los correos que recibe una organización.
+
+Un modelo entrenado únicamente con datasets genéricos, pequeños o que no corresponden al dominio real (como datasets públicos no relacionados con la empresa) suele fallar más, especialmente en los correos “ham” propios del negocio.
+
+Lo ideal es utilizar:
+
+Correos reales de spam detectados por la empresa, y
+
+Correos ham reales del entorno corporativo (comunicaciones internas, tickets, notificaciones, etc.).
+
+Entrenar con datos reales del dominio permite al modelo aprender el estilo, estructura, vocabulario y patrones propios de la organización, lo que mejora significativamente la precisión y reduce falsos positivos y falsos negativos.
 
 ## Licencia
 MIT License.
