@@ -46,9 +46,10 @@ file_path = "model/data/SMSSpamCollection"
 df = pd.read_csv(
     file_path,                  #path
     sep="\t",                   # separado por tabulador
-    header=None,                # no tiene cabecera
+    header=None,                # no tiene cabecera este dataset
     names=["label", "message"]  # nombres de columnas
 )
+
 #convertimos etiquetas a clasificar a 0 y 1
 df["label_num"] = df["label"].map({"ham": 0, "spam": 1})
 

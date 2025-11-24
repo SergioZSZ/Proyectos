@@ -2,34 +2,33 @@ import joblib
 import sys
 
 
-MODEL_PATH = "models/SpamModelLR.joblib"  
+MODEL_PATH = "model/models/SpamModelLR.joblib"  
 #Cargar modelo
 model = joblib.load(MODEL_PATH)
 
 #Ejemplos de correos
 mensajes = [
     "WIN a free prize now! Click the link to claim.",
-    "Hola, te mando el documento actualizado.",
+    "Hi, I'm sending you the updated document.",
     "Limited offer! Get your reward before midnight.",
-    "Tu pedido ha sido enviado y llegará mañana.",
-    "Congratulations, you've been selected for a special promotion!",
-    "Reunión confirmada para mañana a las 10.",
+    "Your order has been shipped and will arrive tomorrow.",
+    "Congratulations, you have been selected for a special promotion!",
+    "Meeting confirmed for tomorrow at 10 AM.",
     "URGENT! Your account will be suspended unless you verify now.",
-    "Puedes revisar este archivo cuando tengas tiempo.",
-    "You won a cash prize! Reply with your info.",
-    "Recordatorio: tienes una cita médica el jueves.",
+    "You can review this file whenever you have time.",
+    "You won a cash prize! Reply with your information.",
+    "Reminder: you have a medical appointment on Thursday.",
     "Claim your free voucher before it expires.",
-    "El paquete está listo para recoger en la oficina.",
+    "The package is ready for pickup at the office.",
     "Don't miss this chance to earn money fast!",
-    "Gracias por tu ayuda con el proyecto.",
+    "Thank you for your help with the project.",
     "Important update: your bank account requires verification.",
-    "Aquí tienes el resumen que pediste el otro día.",
+    "Here is the summary you asked for the other day.",
     "FREE entry to the event! Register now.",
-    "La reunión semanal se pasa al viernes.",
-    "You've been chosen for an exclusive money reward!",
-    "¿Puedes enviarme el informe cuando esté listo?"
+    "The weekly meeting is moved to Friday.",
+    "You have been chosen for an exclusive money reward!",
+    "Can you send me the report when it is ready?"
 ]
-
 
 #Predecir
 preds = model.predict(mensajes)
