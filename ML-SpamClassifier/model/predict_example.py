@@ -2,7 +2,7 @@ import joblib
 import sys
 
 
-MODEL_PATH = "model/models/SpamModelLR.joblib"  
+MODEL_PATH = "model/models/modelSVM.joblib"  
 #Cargar modelo
 model = joblib.load(MODEL_PATH)
 
@@ -34,7 +34,7 @@ mensajes = [
 preds = model.predict(mensajes)
 
 #Mostrar resultados
-sys.stdout = open("Predicciones de Ejemplo.txt","w")
+sys.stdout = open("model/Predicciones de Ejemplo.txt","w")
 for text, pred in zip(mensajes, preds):
     label = "SPAM" if pred == 1 else "HAM"
     print("================================")

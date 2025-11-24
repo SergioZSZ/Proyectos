@@ -3,7 +3,7 @@ Mensaje: WIN a free prize now! Click the link to claim.
 Predicción: SPAM 
 
 ================================
-Mensaje: Hola, te mando el documento actualizado.
+Mensaje: Hi, I'm sending you the updated document.
 Predicción: HAM 
 
 ================================
@@ -11,15 +11,15 @@ Mensaje: Limited offer! Get your reward before midnight.
 Predicción: HAM 
 
 ================================
-Mensaje: Tu pedido ha sido enviado y llegará mañana.
+Mensaje: Your order has been shipped and will arrive tomorrow.
 Predicción: HAM 
 
 ================================
-Mensaje: Congratulations, you've been selected for a special promotion!
+Mensaje: Congratulations, you have been selected for a special promotion!
 Predicción: HAM 
 
 ================================
-Mensaje: Reunión confirmada para mañana a las 10.
+Mensaje: Meeting confirmed for tomorrow at 10 AM.
 Predicción: HAM 
 
 ================================
@@ -27,15 +27,15 @@ Mensaje: URGENT! Your account will be suspended unless you verify now.
 Predicción: HAM 
 
 ================================
-Mensaje: Puedes revisar este archivo cuando tengas tiempo.
+Mensaje: You can review this file whenever you have time.
 Predicción: HAM 
 
 ================================
-Mensaje: You won a cash prize! Reply with your info.
+Mensaje: You won a cash prize! Reply with your information.
 Predicción: SPAM 
 
 ================================
-Mensaje: Recordatorio: tienes una cita médica el jueves.
+Mensaje: Reminder: you have a medical appointment on Thursday.
 Predicción: HAM 
 
 ================================
@@ -43,7 +43,7 @@ Mensaje: Claim your free voucher before it expires.
 Predicción: SPAM 
 
 ================================
-Mensaje: El paquete está listo para recoger en la oficina.
+Mensaje: The package is ready for pickup at the office.
 Predicción: HAM 
 
 ================================
@@ -51,7 +51,7 @@ Mensaje: Don't miss this chance to earn money fast!
 Predicción: HAM 
 
 ================================
-Mensaje: Gracias por tu ayuda con el proyecto.
+Mensaje: Thank you for your help with the project.
 Predicción: HAM 
 
 ================================
@@ -59,7 +59,7 @@ Mensaje: Important update: your bank account requires verification.
 Predicción: HAM 
 
 ================================
-Mensaje: Aquí tienes el resumen que pediste el otro día.
+Mensaje: Here is the summary you asked for the other day.
 Predicción: HAM 
 
 ================================
@@ -67,14 +67,14 @@ Mensaje: FREE entry to the event! Register now.
 Predicción: HAM 
 
 ================================
-Mensaje: La reunión semanal se pasa al viernes.
+Mensaje: The weekly meeting is moved to Friday.
 Predicción: HAM 
 
 ================================
-Mensaje: You've been chosen for an exclusive money reward!
+Mensaje: You have been chosen for an exclusive money reward!
 Predicción: HAM 
 
 ================================
-Mensaje: ¿Puedes enviarme el informe cuando esté listo?
+Mensaje: Can you send me the report when it is ready?
 Predicción: HAM 
 

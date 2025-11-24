@@ -92,5 +92,5 @@ evaluate_clf(pipeSVM,trainx,trainy,testx,testy)
 sys.stdout.close()
 
 #exportamos el que nos cuadre mas
-joblib.dump(pipeLR, "model/models/SpamModelLR.joblib")
+joblib.dump(pipeLR, "model/models/modelSVM.joblib")
 
