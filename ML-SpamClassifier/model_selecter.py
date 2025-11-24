@@ -41,7 +41,7 @@ def evaluate_clf(model, trainx,trainy,testx,testy):
 
 ####################################################################################
 #importamos dataset 
-BASE_DIR =  r"C:\Users\jzaba\Documents\GitHub\Proyectos\SpamML"
+BASE_DIR =  r"C:\Users\jzaba\Documents\GitHub\Proyectos\ML-SpamClassifier"
 file_path = os.path.join(BASE_DIR, "data", "SMSSpamCollection")
 
 df = pd.read_csv(
