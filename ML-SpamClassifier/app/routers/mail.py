@@ -4,10 +4,10 @@ import joblib
 from app.schemas.mail import Tipo
 
 router = APIRouter()
-model = joblib.load("model/models/SpamModelSVM.joblib")
+model = joblib.load("model/models/modelTrained.joblib")
 
-@router.post("/isSpam",response_model=schemas.MailOutput, status_code=status.HTTP_200_OK)
-async def isSpam(mensaje_input: schemas.MailInput):
+@router.post("/predict",response_model=schemas.MailOutput, status_code=status.HTTP_200_OK)
+async def predict(mensaje_input: schemas.MailInput):
     tipo_pred: str
     
     

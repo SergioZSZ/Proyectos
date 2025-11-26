@@ -1,23 +1,28 @@
-# Spam Message Classifier (SMSSpamCollection)
+# Spam Email Classifier (TF-IDF + MLP + FastAPI)
 
-## Descripción del proyecto
-Este proyecto implementa un clasificador de mensajes SPAM vs HAM utilizando el dataset SMSSpamCollection.  
-Incluye procesamiento de texto con TF-IDF, entrenamiento de varios modelos supervisados, selección del mejor modelo y una API FastAPI para predicciones en tiempo real.
+Este proyecto implementa un sistema completo de clasificación de correos electrónicos SPAM vs HAM, utilizando procesamiento avanzado de texto (TF-IDF), modelos supervisados tradicionales y una red neuronal MLP basada en TensorFlow/Keras.  
+Incluye una API FastAPI para predicciones en tiempo real.
 
-## Tecnologías utilizadas
-- Python 3.12
-- scikit-learn
-- pandas
-- FastAPI
-- Uvicorn
-- Pydantic
-- joblib
+# Tecnologías utilizadas
 
-## Generar entorno
-- ```python -m venv .venv``` para generar el entorno en el que instalaremos las dependencias
-- ```pip install -r requirements.txt``` dependencias necesarias para ejecución
+- Python 3.12  
+- scikit-learn  
+- TensorFlow / Keras  
+- pandas  
+- FastAPI  
+- Uvicorn  
+- Pydantic  
+- joblib  
 
-## Estructura del proyecto
+# Generación de entorno
+
+```bash
+python -m venv .venv
+pip install -r requirements.txt
+```
+
+# Estructura del proyecto
+
 ```
 ML-SpamClassifier/
 │
@@ -28,104 +33,176 @@ ML-SpamClassifier/
 │
 ├── model/
 │   ├── data/
-│   │   └── SMSSpamCollection
+│   │   ├── SMSSpamCollection
+│   │   ├── spam_Emails_data.csv
+│   │   └── EMAIL_Enron.csv
 │   ├── metricasSpam/
-│   ├── models/
-│   │   └── SpamModelSVM.joblib
-│   └── model_selecter.py
-│   └── predict_example.py
-│   └── cleanText.py        
+│   ├── examples/
+│   ├── funciones_auxiliares/
+│   ├── trainer.py
+│   ├── model_selecter.py
+│   ├── predict_example.py
+│   ├── cleanText.py
 │   └── evaluateclf.py
 │
-├── requirements.txt
 └── README.md
+└── requirements.txt
 ```
 
-## Preprocesado de texto
-se realiza desde la ```función clean_test()``` de ```cleanText.py```:
-- El pipeline utiliza un preprocesamiento avanzado:
-- Conversión a minúsculas
-- Eliminación de URLs, emails, HTML y números
-- Eliminación de signos de puntuación
-- Stopwords (NLTK)
-- Lematización (WordNet)
-- Tokenización
-- Limpieza final de espacios
+# Preprocesado de texto
 
-## Entrenamiento del modelo
-El script model_selecter.py:
-1. Carga el dataset
-2. Divide los datos con estratificación
-3. Construye pipelines TF-IDF + modelo preprocesando el texto con ```clean_text```, buscando      unigramas y bigramas + definiendo parámetros de actuación en cuanto nº de aparición de palabras
-4. Entrena Logistic Regression, Random Forest y SVM
-5. Evalúa cada modelo con métricas detalladas con ```evaluate_clf```
-6. Selecciona y exporta el mejor modelo
-7. Guarda métricas en model/metricasSpam/
+El proceso se realiza en la función `clean_text()`:
+
+- Conversión a minúsculas  
+- Eliminación de URLs, emails, HTML  
+- Eliminación de números  
+- Eliminación de signos de puntuación  
+- Stopwords (NLTK)  
+- Lematización mediante WordNet  
+- Tokenización  
+- Limpieza de espacios  
+
+Este preprocesado se inyecta en el TfidfVectorizer mediante el parámetro `preprocessor=`.
+
+# Entrenamiento del modelo con MLP
+
+El archivo principal de entrenamiento es:
+
+```
+model/trainer.py
+```
+
+El pipeline incluye:
+
+- TfidfVectorizer  
+  - max_features = 50000  
+  - tokenizer = str.split  
+  - ngram_range = (1,3)  
+  - min_df = 5  
+  - max_df = 0.9  
+  - preprocessor = clean_text  
+
+- KerasClassifier (scikeras) con red neuronal MLP:  
+  - Capas: 16 → 8 → 1  
+  - Dropout  
+  - EarlyStopping  
+  - Función de pérdida: binary_crossentropy  
 
 Ejecutar entrenamiento:
 
-```python model/model_selecter.py```
+```bash
+python model/trainer.py
+```
 
-## Métricas generadas
-Incluyen:
-- Accuracy
-- Precision
-- Recall
-- F1-score
-- Matriz de confusión
+# Datasets disponibles y su impacto
+
+El proyecto soporta varios datasets. Cada uno influye en la calidad del modelo, tiempo de entrenamiento y limitaciones.
+
+## 1. SMSSpamCollection  
+Ubicación: `model/data/SMSSpamCollection`
+
+- Tamaño aproximado: 5.5k registros  
+- Formato: SMS cortos, lenguaje informal  
+- Separador original: `\t`  
+- Para usarlo en el proyecto:  
+  - Cambiar `sep="\t"`  
+  - Definir las columnas como:  
+    ```python
+    names=["label", "text"]
+    ```
+- Tiempo de entrenamiento: muy rápido (2-5 segundos)  
+- Precisión limitada por el tamaño reducido y dominio SMS  
+- No detecta spam moderno basado en email  
+- Adecuado para pruebas rápidas  
+
+## 2. spam_Emails_data.csv (dataset grande ~190k correos)  
+Ubicación: `model/data/spam_Emails_data.csv`
+- incorporado inicialmente
+- Tamaño: aproximadamente 190.000 correos  
+- Muy variado, incluye spam moderno  
+- Ideal para entrenar la red neuronal MLP
+- Separador original: `,`   
+- Tiempos aproximados:  
+  - TF-IDF: 1-4 minutos  
+  - Entrenamiento MLP: 1-3 minutos  
+- Mucho mejor rendimiento y generalización  
+- Puede consumir más RAM por tener 50k features
 
 
-## Predicción de nuevos mensajes
-El archivo ```predict_example.py``` permite cargar el modelo exportado y clasificar nuevos textos.
 
-Ejecutar:
-```python predict_example.py```
+# Cómo cambiar de dataset
 
-## API FastAPI
-El proyecto incluye una API REST para clasificar mensajes en tiempo real.
+En `trainer.py` o `model_selecter.py` modificar:
 
-Ejecutar la API:
-```uvicorn app.main:app --reload```
+```python
+BASE_DIR = "model/data/spam_Emails_data.csv"
+```
 
-Documentación interactiva:
+Si el dataset no usa coma como separador:
+
+```python
+df = pd.read_csv(BASE_DIR, sep=",")
+```
+
+Si no tiene cabeceras:
+
+```python
+names=["label", "text"]
+```
+
+Para SMSSpamCollection:
+
+```python
+sep="\t"
+names=["label", "text"]
+```
+
+# Predicción de mensajes de prueba
+
+```bash
+python model/predict_example.py
+```
+
+# API FastAPI
+
+```bash
+uvicorn app.main:app --reload
+```
+
+Documentación:
 http://localhost:8000/docs
 
-### Endpoint principal
-POST /mail/isSpam
-```
+# Endpoint principal
+
+POST `/mail/predict`
+
 Body:
+```json
 {
-  "message": "Win a free tickets, No prize! click on the link below."
+  "message": "Win money now"
 }
 ```
+
 Respuesta:
-```
+```json
 {
-  "message": "Win a free tickets, No prize! click on the link below.",
+  "message": "Win money now",
   "tipo": "SPAM"
 }
 ```
-## Limitaciones del dataset SSMSpamCollection
-El dataset:
-- Solo contiene mensajes SMS no muy largos
-- No incluye spam moderno
-- No detecta phishing avanzado
-- Es un dataset educativo, no orientado a producción
 
-Para que un sistema de detección de spam sea realmente preciso en un entorno real, el modelo debe entrenarse con datos que representen fielmente los correos que recibe una organización.
+# Limitaciones
 
-Un modelo entrenado únicamente con datasets genéricos, pequeños o que no corresponden al dominio real (como datasets públicos no relacionados con la empresa) suele fallar más, especialmente en los correos “ham” propios del negocio.
+- Los datasets pequeños reducen precisión  
+- Datasets genéricos no reflejan el vocabulario real de una empresa  
+- Para producción se recomienda entrenar con:
+  - correos ham reales de la organización
+  - correos spam reales detectados internamente
 
-Lo ideal es utilizar:
+# Licencia
 
-Correos reales de spam detectados por la empresa, y
-
-Correos ham reales del entorno corporativo (comunicaciones internas, tickets, notificaciones, etc.).
-
-Entrenar con datos reales del dominio permite al modelo aprender el estilo, estructura, vocabulario y patrones propios de la organización, lo que mejora significativamente la precisión y reduce falsos positivos y falsos negativos.
-
-## Licencia
 MIT License.
 
-## Autor
+# Autor
+
 Sergio Zaballos Herrera
