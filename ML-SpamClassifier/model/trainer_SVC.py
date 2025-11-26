@@ -34,14 +34,13 @@ trainx,testx,trainy,testy = train_test_split(x,y,test_size=0.2, random_state=42,
 # 
 pipeS = Pipeline([
     ("vectoricer",TfidfVectorizer(
-        tokenizer=str.split,
         ngram_range=(1,2),
         #stop_words = STOPWORDS_ENGLISH,
         max_df=0.9,
         min_df=5,
         max_features=40000)),
     
-    ("model", LinearSVC())
+    ("model", LinearSVC(max_iter=7000))
 ])
 
 #entrenamos

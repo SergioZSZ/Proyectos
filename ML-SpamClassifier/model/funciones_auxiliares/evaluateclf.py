@@ -1,5 +1,5 @@
 
-from sklearn.metrics import (accuracy_score,f1_score,confusion_matrix,recall_score,precision_score)
+from sklearn.metrics import (classification_report,accuracy_score,f1_score,confusion_matrix,recall_score,precision_score)
 import os
 import sys
 
@@ -27,6 +27,14 @@ def evaluate_clf(tipo,model,trainx,testx,trainy,testy):
     print("Recall:", recall_score(testy, pred_test))
     print("F1:", f1_score(testy, pred_test))
 
+    print("\n---- CLASSIFICATION REPORT (TEST) ----")
+    print(
+        classification_report(
+            testy,
+            pred_test,
+        target_names=["ham", "spam"]
+        )
+    )
     print("\nMatriz de confusión (test):")
     print(confusion_matrix(testy, pred_test))
     

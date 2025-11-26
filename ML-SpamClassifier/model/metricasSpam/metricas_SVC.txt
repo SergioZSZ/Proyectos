@@ -10,6 +10,17 @@ Precision: 0.9854284471509351
 Recall: 0.9883302432108191
 F1: 0.9868772120882112
 
+---- CLASSIFICATION REPORT (TEST) ----
+              precision    recall  f1-score   support
+
+         ham       0.99      0.99      0.99     20432
+        spam       0.99      0.99      0.99     18338
+
+    accuracy                           0.99     38770
+   macro avg       0.99      0.99      0.99     38770
+weighted avg       0.99      0.99      0.99     38770
+
+
 Matriz de confusión (test):
 [[20164   268]
  [  214 18124]]
