@@ -60,12 +60,19 @@ finevaluado=time.time()
 os.makedirs("model/models",exist_ok=True)
 joblib.dump(pipeS,"model/models/modelSVC.joblib")
 
-prep = (finpreprocesado-preprocesado)/60
-entr = (finentrenado-entrenado)/60
-ev = (finevaluado-evaluado)/60
-print(f"prep: {prep}min")
-print(f"entr: {entr}min")
-print(f"ev: {ev}min")
+
+#dar los minutos y segundos de cada proceso
+prep= (finpreprocesado-preprocesado)
+entr= (finentrenado-entrenado)
+ev= (finevaluado-evaluado)
+
+prep_min, prep_sec= divmod(prep, 60)
+entr_min, entr_sec = divmod(entr, 60)
+ev_min, ev_sec= divmod(ev, 60)
+
+print(f"prep: {int(prep_min)} min {prep_sec:.2f} s")
+print(f"entr: {int(entr_min)} min {entr_sec:.2f} s")
+print(f"ev: {int(ev_min)} min {ev_sec:.2f} s")
 
 
 
