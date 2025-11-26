@@ -1,6 +1,6 @@
-# Spam Email Classifier (TF-IDF + MLP + FastAPI)
+# Spam Email Classifier (TF-IDF + ModeloSVC + FastAPI)
 
-Este proyecto implementa un sistema completo de clasificación de correos electrónicos SPAM vs HAM, utilizando procesamiento avanzado de texto (TF-IDF), modelos supervisados tradicionales y una red neuronal MLP basada en TensorFlow/Keras.  
+Este proyecto implementa un sistema completo de clasificación de correos electrónicos SPAM vs HAM, utilizando procesamiento avanzado de texto (TF-IDF), modelos supervisados tradicionales y probando también con una red neuronal MLP basada en TensorFlow/Keras.  
 Incluye una API FastAPI para predicciones en tiempo real.
 
 # Tecnologías utilizadas
@@ -33,17 +33,17 @@ ML-SpamClassifier/
 │
 ├── model/
 │   ├── data/
-│   │   ├── SMSSpamCollection
-│   │   ├── spam_Emails_data.csv
-│   │   └── EMAIL_Enron.csv
+│   │   └── SMSSpamCollection
 │   ├── metricasSpam/
 │   ├── examples/
 │   ├── funciones_auxiliares/
-│   ├── trainer.py
+         │──cleanText.py
+         │── evaluateclf.py
+         └── createModel.py
+│   ├── trainer_MLP.py
+│   ├── trainer_SVC.py
 │   ├── model_selecter.py
 │   ├── predict_example.py
-│   ├── cleanText.py
-│   └── evaluateclf.py
 │
 └── README.md
 └── requirements.txt
@@ -68,10 +68,10 @@ Este preprocesado se inyecta en el TfidfVectorizer mediante el parámetro `prepr
 
 El archivo principal de entrenamiento es:
 
-```
-model/trainer.py
-```
+```model/trainer_SVC.py``` para probar el modelo SVC Sequential
+```model/trainer_MLP.py``` para probar el modelo MLP Sequential
 
+generarán respectivamente ```modelSVC.joblib``` ```modelMLP.joblib```
 El pipeline incluye:
 
 - TfidfVectorizer  
@@ -91,7 +91,8 @@ El pipeline incluye:
 Ejecutar entrenamiento:
 
 ```bash
-python model/trainer.py
+python -m model.trainer_SVC
+python -m model.trainer_mlp
 ```
 
 # Datasets disponibles y su impacto
@@ -133,13 +134,13 @@ Ubicación: `model/data/SMSSpamCollection`
 
 # Cómo cambiar de dataset
 
-En `trainer.py` o `model_selecter.py` modificar:
+En los `trainer.py` modificar:
 
 ```python
 BASE_DIR = "model/data/spam_Emails_data.csv"
 ```
 
-Si el dataset no usa coma como separador:
+Si el dataset usa coma como separador:
 
 ```python
 df = pd.read_csv(BASE_DIR, sep=",")
@@ -161,7 +162,7 @@ names=["label", "text"]
 # Predicción de mensajes de prueba
 
 ```bash
-python model/predict_example.py
+python -m model.predict_example
 ```
 
 # API FastAPI

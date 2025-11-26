@@ -2,10 +2,10 @@ from fastapi import APIRouter, HTTPException, status
 from app import schemas
 import joblib
 from app.schemas.mail import Tipo
-from model.funciones_auxiliares import clean_text, create_model
+#from model.funciones_auxiliares import clean_text, create_model
 router = APIRouter()
-model = joblib.load("model/models/modelTrained.joblib")
-
+#model = joblib.load("model/models/modelTrained.joblib")
+model = joblib.load("model/models/modelSVC.joblib")
 @router.post("/predict",response_model=schemas.MailOutput, status_code=status.HTTP_200_OK)
 async def predict(mensaje_input: schemas.MailInput):
     tipo_pred: str
