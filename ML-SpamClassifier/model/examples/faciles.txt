@@ -50,7 +50,7 @@ Mensaje: Your account will be suspended unless you click here now.
 
 ================================
 Real: HAM
-Predicción: SPAM
+Predicción: HAM
 Mensaje: Great work on the project, the client was very happy.
 
 ================================
@@ -135,7 +135,7 @@ Mensaje: Please review the attached draft when you have a moment.
 
 ================================
 Real: SPAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: FINAL NOTICE: unpaid fees must be resolved today.
 
 ================================
@@ -191,8 +191,8 @@ Mensaje: Confirm your email to avoid permanent deactivation.
 
 
 =========== RESULTADOS ===========
-HAM acertados: 14
-HAM fallados: 5
-SPAM acertados: 16
-SPAM fallados: 3
-Acierto total: 78.95%
+HAM acertados: 15
+HAM fallados: 4
+SPAM acertados: 17
+SPAM fallados: 2
+Acierto total: 84.21%

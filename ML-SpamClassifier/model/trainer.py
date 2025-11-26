@@ -23,17 +23,16 @@ callbacks = [
     )
 ]
 
-DATA_DIR = "model/data/SMSSpamCollection"
+DATA_DIR = "model/data/spam_Emails_data.csv"
 df = pd.read_csv(DATA_DIR,
-                    sep="\t",
-                    header=None,
-                    names=["label","message"]
+                    sep=",",
+                    header=0,
                     )
 df = df.dropna() ##borrar filas vacias
 #print(df.head())
 
-df["label_num"]=df["label"].map({"ham":0,"spam":1})
-x=df["message"]
+df["label_num"]=df["label"].map({"Ham":0,"Spam":1})
+x=df["text"]
 y= df["label_num"]
 
 trainx,testx,trainy,testy = train_test_split(x,y,test_size=0.2, random_state=42, stratify=y)

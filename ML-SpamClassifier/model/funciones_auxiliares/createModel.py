@@ -15,8 +15,5 @@ def create_model(meta):
     model.compile(                                      #los modelos Seq hay que compilarlos
         optimizer="adam",                               #muy buen optimizador
         loss="binary_crossentropy",                     #es un binario de 0 o 1 
-        metrics=["accuracy",                            #las metricas que quermos guardar
-            tf.keras.metrics.Precision(name="precision"),
-            tf.keras.metrics.Recall(name="recall")
-    ])
+        metrics=["accuracy","precision","recall"])
     return model

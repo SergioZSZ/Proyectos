@@ -20,12 +20,12 @@ Mensaje: The document you attempted to access requires re-authentication. Log in
 
 ================================
 Real: HAM
-Predicción: SPAM
+Predicción: HAM
 Mensaje: Could you verify whether the supplier responded to the revised purchase order from last week?
 
 ================================
 Real: SPAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: Your payroll information could not be validated. Update your banking details to avoid payment delays.
 
 ================================
@@ -75,7 +75,7 @@ Mensaje: IT informed us that access to archived emails may be slow while indexin
 
 ================================
 Real: SPAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: The IT department detected a breach in your session. Reset your password now.
 
 ================================
@@ -151,8 +151,8 @@ Mensaje: Your HR profile contains outdated information. Update your credentials 
 
 
 =========== RESULTADOS ===========
-HAM acertados: 8
-HAM fallados: 7
-SPAM acertados: 9
-SPAM fallados: 6
-Acierto total: 56.67%
+HAM acertados: 9
+HAM fallados: 6
+SPAM acertados: 11
+SPAM fallados: 4
+Acierto total: 66.67%
