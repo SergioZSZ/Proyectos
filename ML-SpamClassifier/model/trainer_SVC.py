@@ -60,7 +60,7 @@ finevaluado=time.time()
 os.makedirs("model/models",exist_ok=True)
 joblib.dump(pipeS,"model/models/modelSVC.joblib")
 
-prep = (finpreprocesado-preprocesado)/6
+prep = (finpreprocesado-preprocesado)/60
 entr = (finentrenado-entrenado)/60
 ev = (finevaluado-evaluado)/60
 print(f"prep: {prep}min")
