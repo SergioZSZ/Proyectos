@@ -4,9 +4,8 @@ import time
 import joblib
 import pandas as pd
 
-from funciones_auxiliares import clean_text,evaluate_clf
-from create_model import create_model
-
+from model.funciones_auxiliares import clean_text,evaluate_clf
+from model.funciones_auxiliares import create_model
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 
@@ -24,16 +23,17 @@ callbacks = [
     )
 ]
 
-DATA_DIR = "model/data/spam_Emails_data.csv"
+DATA_DIR = "model/data/SMSSpamCollection"
 df = pd.read_csv(DATA_DIR,
-                    sep=",",
-                    header=0,
+                    sep="\t",
+                    header=None,
+                    names=["label","message"]
                     )
 df = df.dropna() ##borrar filas vacias
 #print(df.head())
 
-df["label_num"]=df["label"].map({"Ham":0,"Spam":1})
-x=df["text"]
+df["label_num"]=df["label"].map({"ham":0,"spam":1})
+x=df["message"]
 y= df["label_num"]
 
 trainx,testx,trainy,testy = train_test_split(x,y,test_size=0.2, random_state=42, stratify=y)

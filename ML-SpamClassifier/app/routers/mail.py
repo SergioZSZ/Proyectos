@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException, status
 from app import schemas
 import joblib
 from app.schemas.mail import Tipo
-
+from model.funciones_auxiliares import clean_text, create_model
 router = APIRouter()
 model = joblib.load("model/models/modelTrained.joblib")
 

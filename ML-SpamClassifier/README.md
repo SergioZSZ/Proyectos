@@ -119,7 +119,6 @@ Ubicación: `model/data/SMSSpamCollection`
 - muy grande para subir a GitHub
 - descargable en: https://www.kaggle.com/datasets/meruvulikith/190k-spam-ham-email-dataset-for-classification
 
-- incorporado inicialmente
 - Tamaño: aproximadamente 190.000 correos  
 - Muy variado, incluye spam moderno  
 - Ideal para entrenar la red neuronal MLP
