@@ -44,7 +44,7 @@ pipeS = Pipeline([
         max_features = 50000,    
         preprocessor=clean_text,
         tokenizer=str.split,
-        ngram_range=(1,3),
+        ngram_range=(1,2),
         max_df=0.9,
         min_df=5)),
     

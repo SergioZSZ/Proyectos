@@ -68,7 +68,12 @@ def evaluar_y_guardar(nombre_archivo, ejemplos, modelo):
 # ====================================================
 # CARGAR MODELO
 # ====================================================
+
+
+
 model = joblib.load("model/models/modelSVC.joblib")
+
+
 
 # ====================================================
 # EJEMPLOS FÁCILES (30/30)

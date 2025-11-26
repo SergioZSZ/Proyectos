@@ -4,8 +4,7 @@ import time
 import joblib
 import pandas as pd
 
-from model.funciones_auxiliares import clean_text,evaluate_clf
-from model.funciones_auxiliares import create_model
+from model.funciones_auxiliares import clean_text,evaluate_clf, STOPWORDS_ENGLISH
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.svm import LinearSVC
@@ -22,7 +21,11 @@ df = df.dropna() ##borrar filas vacias
 #print(df.head())
 
 df["label_num"]=df["label"].map({"Ham":0,"Spam":1})
-x=df["text"]
+
+preprocesado=time.time()
+df["clean_text"]= df["text"].apply(clean_text)
+finpreprocesado=time.time()
+x=df["clean_text"]
 y= df["label_num"]
 
 trainx,testx,trainy,testy = train_test_split(x,y,test_size=0.2, random_state=42, stratify=y)
@@ -31,24 +34,39 @@ trainx,testx,trainy,testy = train_test_split(x,y,test_size=0.2, random_state=42,
 # 
 pipeS = Pipeline([
     ("vectoricer",TfidfVectorizer(
-        max_features = 50000,    
-        preprocessor=clean_text,
         tokenizer=str.split,
-        ngram_range=(1,3),
+        ngram_range=(1,2),
+        #stop_words = STOPWORDS_ENGLISH,
         max_df=0.9,
-        min_df=5)),
+        min_df=5,
+        max_features=40000)),
     
     ("model", LinearSVC())
 ])
 
 #entrenamos
+entrenado=time.time()
 pipeS.fit(trainx,trainy)  
+finentrenado=time.time()
+
 
 #metricas con predict
+evaluado=time.time()
 evaluate_clf("SVC",pipeS, trainx,testx,trainy,testy)
+finevaluado=time.time()
 
-os.makedirs("model",exist_ok=True)
+
+
+os.makedirs("model/models",exist_ok=True)
 joblib.dump(pipeS,"model/models/modelSVC.joblib")
+
+prep = (finpreprocesado-preprocesado)/60
+entr = (finentrenado-entrenado)/60
+ev = (finevaluado-evaluado)/60
+print(f"prep: {prep}min")
+print(f"entr: {entr}min")
+print(f"ev: {ev}min")
+
 
 
 

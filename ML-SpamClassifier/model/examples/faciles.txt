@@ -40,7 +40,7 @@ Mensaje: Congratulations, you've been selected for a cash reward!
 
 ================================
 Real: HAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: Let me know if you need help with the presentation.
 
 ================================
@@ -50,7 +50,7 @@ Mensaje: Your account will be suspended unless you click here now.
 
 ================================
 Real: HAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: Great work on the project, the client was very happy.
 
 ================================
@@ -65,12 +65,12 @@ Mensaje: I attached the notes from today’s call, please check them.
 
 ================================
 Real: SPAM
-Predicción: SPAM
+Predicción: HAM
 Mensaje: You won a vacation to the Caribbean! Confirm your details.
 
 ================================
 Real: HAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: The server maintenance completed successfully this morning.
 
 ================================
@@ -115,7 +115,7 @@ Mensaje: The meeting room is booked from 11 to 12 as requested.
 
 ================================
 Real: SPAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: Your password is expiring, verify your account now.
 
 ================================
@@ -160,7 +160,7 @@ Mensaje: Your device is infected! Run an immediate system scan.
 
 ================================
 Real: HAM
-Predicción: SPAM
+Predicción: HAM
 Mensaje: I uploaded the documents to the shared drive.
 
 ================================
@@ -170,7 +170,7 @@ Mensaje: Double your Bitcoin instantly with this promo link.
 
 ================================
 Real: HAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: Let me know if you prefer the PDF or the Word version.
 
 ================================
@@ -180,7 +180,7 @@ Mensaje: This exclusive offer ends in 2 hours, act quickly!
 
 ================================
 Real: HAM
-Predicción: SPAM
+Predicción: HAM
 Mensaje: The office printer is working again, IT fixed it.
 
 ================================
@@ -191,8 +191,8 @@ Mensaje: Confirm your email to avoid permanent deactivation.
 
 
 =========== RESULTADOS ===========
-HAM acertados: 15
-HAM fallados: 4
+HAM acertados: 13
+HAM fallados: 6
 SPAM acertados: 17
 SPAM fallados: 2
-Acierto total: 84.21%
+Acierto total: 78.95%

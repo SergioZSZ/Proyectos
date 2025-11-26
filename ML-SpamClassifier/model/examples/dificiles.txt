@@ -20,7 +20,7 @@ Mensaje: The document you attempted to access requires re-authentication. Log in
 
 ================================
 Real: HAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: Could you verify whether the supplier responded to the revised purchase order from last week?
 
 ================================
@@ -55,7 +55,7 @@ Mensaje: Thanks for updating the financial forecast. Please also review the new 
 
 ================================
 Real: SPAM
-Predicción: SPAM
+Predicción: HAM
 Mensaje: Your mailbox storage is over quota. Increase your capacity using the admin panel.
 
 ================================
@@ -80,7 +80,7 @@ Mensaje: The IT department detected a breach in your session. Reset your passwor
 
 ================================
 Real: HAM
-Predicción: SPAM
+Predicción: HAM
 Mensaje: I updated the permissions on the shared drive; you should have write access.
 
 ================================
@@ -90,7 +90,7 @@ Mensaje: The invoice submitted yesterday has been rejected. Re-upload your crede
 
 ================================
 Real: HAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: Please confirm if the data export process finished successfully on your end.
 
 ================================
@@ -120,7 +120,7 @@ Mensaje: Immediate action required: your compliance forms are incomplete. Submit
 
 ================================
 Real: HAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: The authentication token for the dev environment expired. I requested a new one from IT.
 
 ================================
@@ -130,7 +130,7 @@ Mensaje: Your access to the corporate dashboard has been limited pending securit
 
 ================================
 Real: HAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: Let me know if the file uploaded correctly to the secure drop portal.
 
 ================================
@@ -140,7 +140,7 @@ Mensaje: A restricted document has been shared with you, but your identity could
 
 ================================
 Real: HAM
-Predicción: SPAM
+Predicción: HAM
 Mensaje: The internal monitoring system reported elevated load earlier, but it's stable now.
 
 ================================
@@ -151,8 +151,8 @@ Mensaje: Your HR profile contains outdated information. Update your credentials 
 
 
 =========== RESULTADOS ===========
-HAM acertados: 9
-HAM fallados: 6
-SPAM acertados: 11
-SPAM fallados: 4
-Acierto total: 66.67%
+HAM acertados: 7
+HAM fallados: 8
+SPAM acertados: 10
+SPAM fallados: 5
+Acierto total: 56.67%
