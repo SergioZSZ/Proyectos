@@ -116,7 +116,9 @@ Ubicación: `model/data/SMSSpamCollection`
 - Adecuado para pruebas rápidas  
 
 ## 2. spam_Emails_data.csv (dataset grande ~190k correos)  
-Ubicación: `model/data/spam_Emails_data.csv`
+- muy grande para subir a GitHub
+- descargable en: https://www.kaggle.com/datasets/meruvulikith/190k-spam-ham-email-dataset-for-classification
+
 - incorporado inicialmente
 - Tamaño: aproximadamente 190.000 correos  
 - Muy variado, incluye spam moderno  
