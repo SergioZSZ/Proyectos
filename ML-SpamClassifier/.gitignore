@@ -6,3 +6,4 @@
 /model/__pycache__
 /model/data/spam_Emails_data.csv
 /model/data/spamassassin_utf8.csv
+/model/funciones_auxiliares/__pycache__
