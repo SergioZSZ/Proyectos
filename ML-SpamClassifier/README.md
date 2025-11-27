@@ -125,7 +125,7 @@ Ubicación: `model/data/SMSSpamCollection`
 - Ideal para entrenar la red neuronal MLP
 - Separador original: `,`   
 - Tiempos aproximados:  
-  - TF-IDF: 1-4 minutos  
+  - Entrenamiento LinearSVC + TF-IDF: 1-4 minutos  
   - Entrenamiento MLP: 1-3 minutos  
 - Mucho mejor rendimiento y generalización  
 - Puede consumir más RAM por tener 50k features
