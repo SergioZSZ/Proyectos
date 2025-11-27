@@ -134,7 +134,7 @@ Ubicación: `model/data/SMSSpamCollection`
 
 # Cómo cambiar de dataset
 
-En los `trainer.py` modificar:
+En los `trainer.py` modificar a la ruta a la del dataset que se quiera usar:
 
 ```python
 BASE_DIR = "model/data/spam_Emails_data.csv"
@@ -193,8 +193,22 @@ Respuesta:
 }
 ```
 
-# Limitaciones
+Body:
+```json
+{
+  "message": "here you got the notes of the last lecture. thanks for comming"
+}
+```
 
+Respuesta:
+```json
+{
+  "message": "here you got the notes of the last lecture. thanks for comming",
+  "tipo": "HAM"
+}
+```
+# Limitaciones
+- El modelo solo está entrenado con correos en inglés 
 - Los datasets pequeños reducen precisión  
 - Datasets genéricos no reflejan el vocabulario real de una empresa  
 - Para producción se recomienda entrenar con:
