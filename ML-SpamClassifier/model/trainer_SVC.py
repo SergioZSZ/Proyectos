@@ -6,6 +6,7 @@ import pandas as pd
 
 from model.funciones_auxiliares import clean_text,evaluate_clf, STOPWORDS_ENGLISH
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.svm import LinearSVC
 from sklearn.pipeline import Pipeline
@@ -20,15 +21,19 @@ df = pd.read_csv(DATA_DIR,
 df = df.dropna() ##borrar filas vacias
 #print(df.head())
 
-df["label_num"]=df["label"].map({"Ham":0,"Spam":1})
+
+
 
 preprocesado=time.time()
 df["clean_text"]= df["text"].apply(clean_text)
 finpreprocesado=time.time()
 x=df["clean_text"]
-y= df["label_num"]
+y= df["label"]
 
-trainx,testx,trainy,testy = train_test_split(x,y,test_size=0.2, random_state=42, stratify=y)
+encoder = LabelEncoder()
+y_encoded = encoder.fit_transform(y)
+
+trainx,testx,trainy,testy = train_test_split(x,y_encoded,test_size=0.2, random_state=42, stratify=y)
 
 
 # 

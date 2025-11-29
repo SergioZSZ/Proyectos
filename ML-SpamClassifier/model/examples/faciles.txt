@@ -40,7 +40,7 @@ Mensaje: Congratulations, you've been selected for a cash reward!
 
 ================================
 Real: HAM
-Predicción: SPAM
+Predicción: HAM
 Mensaje: Let me know if you need help with the presentation.
 
 ================================
@@ -50,7 +50,7 @@ Mensaje: Your account will be suspended unless you click here now.
 
 ================================
 Real: HAM
-Predicción: SPAM
+Predicción: HAM
 Mensaje: Great work on the project, the client was very happy.
 
 ================================
@@ -65,17 +65,17 @@ Mensaje: I attached the notes from today’s call, please check them.
 
 ================================
 Real: SPAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: You won a vacation to the Caribbean! Confirm your details.
 
 ================================
 Real: HAM
-Predicción: SPAM
+Predicción: HAM
 Mensaje: The server maintenance completed successfully this morning.
 
 ================================
 Real: SPAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: Act now! Only a few vouchers left.
 
 ================================
@@ -100,7 +100,7 @@ Mensaje: Earn €500/day working from home, no experience needed.
 
 ================================
 Real: HAM
-Predicción: SPAM
+Predicción: HAM
 Mensaje: I will be working remotely this afternoon.
 
 ================================
@@ -135,12 +135,12 @@ Mensaje: Please review the attached draft when you have a moment.
 
 ================================
 Real: SPAM
-Predicción: SPAM
+Predicción: HAM
 Mensaje: FINAL NOTICE: unpaid fees must be resolved today.
 
 ================================
 Real: HAM
-Predicción: SPAM
+Predicción: HAM
 Mensaje: Your order will be delivered tomorrow between 10 and 12.
 
 ================================
@@ -155,7 +155,7 @@ Mensaje: Could you update the spreadsheet with the latest numbers?
 
 ================================
 Real: SPAM
-Predicción: SPAM
+Predicción: HAM
 Mensaje: Your device is infected! Run an immediate system scan.
 
 ================================
@@ -170,7 +170,7 @@ Mensaje: Double your Bitcoin instantly with this promo link.
 
 ================================
 Real: HAM
-Predicción: SPAM
+Predicción: HAM
 Mensaje: Let me know if you prefer the PDF or the Word version.
 
 ================================
@@ -191,8 +191,8 @@ Mensaje: Confirm your email to avoid permanent deactivation.
 
 
 =========== RESULTADOS ===========
-HAM acertados: 13
-HAM fallados: 6
+HAM acertados: 19
+HAM fallados: 0
 SPAM acertados: 17
 SPAM fallados: 2
-Acierto total: 78.95%
+Acierto total: 94.74%

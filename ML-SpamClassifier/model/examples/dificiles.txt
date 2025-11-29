@@ -20,7 +20,7 @@ Mensaje: The document you attempted to access requires re-authentication. Log in
 
 ================================
 Real: HAM
-Predicción: SPAM
+Predicción: HAM
 Mensaje: Could you verify whether the supplier responded to the revised purchase order from last week?
 
 ================================
@@ -40,7 +40,7 @@ Mensaje: A confidential message has been assigned to your inbox. Access requires
 
 ================================
 Real: HAM
-Predicción: SPAM
+Predicción: HAM
 Mensaje: We detected delays in the email queue; some outgoing messages may arrive late.
 
 ================================
@@ -55,7 +55,7 @@ Mensaje: Thanks for updating the financial forecast. Please also review the new 
 
 ================================
 Real: SPAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: Your mailbox storage is over quota. Increase your capacity using the admin panel.
 
 ================================
@@ -70,7 +70,7 @@ Mensaje: Your encrypted files could not be restored without confirming your secu
 
 ================================
 Real: HAM
-Predicción: SPAM
+Predicción: HAM
 Mensaje: IT informed us that access to archived emails may be slow while indexing completes.
 
 ================================
@@ -90,7 +90,7 @@ Mensaje: The invoice submitted yesterday has been rejected. Re-upload your crede
 
 ================================
 Real: HAM
-Predicción: SPAM
+Predicción: HAM
 Mensaje: Please confirm if the data export process finished successfully on your end.
 
 ================================
@@ -120,7 +120,7 @@ Mensaje: Immediate action required: your compliance forms are incomplete. Submit
 
 ================================
 Real: HAM
-Predicción: SPAM
+Predicción: HAM
 Mensaje: The authentication token for the dev environment expired. I requested a new one from IT.
 
 ================================
@@ -130,7 +130,7 @@ Mensaje: Your access to the corporate dashboard has been limited pending securit
 
 ================================
 Real: HAM
-Predicción: SPAM
+Predicción: HAM
 Mensaje: Let me know if the file uploaded correctly to the secure drop portal.
 
 ================================
@@ -140,7 +140,7 @@ Mensaje: A restricted document has been shared with you, but your identity could
 
 ================================
 Real: HAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: The internal monitoring system reported elevated load earlier, but it's stable now.
 
 ================================
@@ -151,8 +151,8 @@ Mensaje: Your HR profile contains outdated information. Update your credentials 
 
 
 =========== RESULTADOS ===========
-HAM acertados: 7
-HAM fallados: 8
-SPAM acertados: 10
-SPAM fallados: 5
-Acierto total: 56.67%
+HAM acertados: 12
+HAM fallados: 3
+SPAM acertados: 11
+SPAM fallados: 4
+Acierto total: 76.67%

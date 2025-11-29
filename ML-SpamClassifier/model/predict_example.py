@@ -5,7 +5,6 @@ import sys
 import tensorflow as tf
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
-from model.funciones_auxiliares import create_model
 
 
 
@@ -23,8 +22,10 @@ def evaluar_y_guardar(nombre_archivo, ejemplos, modelo):
     mensajes = [msg for label, msg in ejemplos]
 
     # Hacer predicciones
-    preds = modelo.predict(mensajes)
-
+    x = tf.constant(mensajes)
+    preds = modelo.predict(x)
+    preds_bin = (preds.flatten() >= 0.5).astype(int)
+    
     # Preparar archivo
     os.makedirs("model/examples", exist_ok=True)
     f = open(f"model/examples/{nombre_archivo}.txt", "w", encoding="utf-8")
@@ -32,7 +33,7 @@ def evaluar_y_guardar(nombre_archivo, ejemplos, modelo):
     # Contadores
     ham_ok = ham_bad = spam_ok = spam_bad = 0
 
-    for (label_real, msg), pred in zip(ejemplos, preds):
+    for (label_real, msg), pred in zip(ejemplos, preds_bin):
         label_pred = "SPAM" if pred == 1 else "HAM"
 
         # Conteo
@@ -71,8 +72,8 @@ def evaluar_y_guardar(nombre_archivo, ejemplos, modelo):
 
 
 
-model = joblib.load("model/models/modelSVC.joblib")
-
+#model = joblib.load("model/models/modelSVC.joblib")
+model = tf.keras.models.load_model("model/models/modelMLP.keras")
 
 
 # ====================================================

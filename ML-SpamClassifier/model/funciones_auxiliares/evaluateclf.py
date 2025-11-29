@@ -7,13 +7,21 @@ def evaluate_clf(tipo,model,trainx,testx,trainy,testy):
     
     #predicciones del modelo entrenado(del x del entreno y del x del testeo)
     
-    pred_train = model.predict(trainx)
-    pred_test = model.predict(testx)
+    if(tipo=="SVC"):
+        pred_train = model.predict(trainx)
+        pred_test = model.predict(testx)
+    else:
+        #mlp da probabilidades, hay que pasarlo a enteros
+        pred_train = (model.predict(trainx) > 0.5).astype("int32")
+        pred_test  = (model.predict(testx) > 0.5).astype("int32")
+        pred_train = pred_train.flatten() #aplanado necesario para confusion matrix
+        pred_test = pred_test.flatten()
     
-    os.makedirs("metricasSpam",exist_ok=True)
+    os.makedirs("model/metricasSpam",exist_ok=True)
     
     stdout = sys.stdout
-    sys.stdout = open("model/metricasSpam/metricas_"+tipo+".txt","w")
+    f = open(f"model/metricasSpam/metricas_{tipo}.txt", "w", encoding="utf-8")
+    sys.stdout = f
     
     print("---- ENTRENAMIENTO ----")
     print("Accuracy:", accuracy_score(trainy, pred_train))
@@ -38,4 +46,7 @@ def evaluate_clf(tipo,model,trainx,testx,trainy,testy):
     print("\nMatriz de confusión (test):")
     print(confusion_matrix(testy, pred_test))
     
-    sys.stdout= stdout
+    f.close()
+    sys.stdout = stdout
+    
+    
