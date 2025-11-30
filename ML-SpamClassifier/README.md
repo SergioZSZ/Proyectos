@@ -1,3 +1,5 @@
+Actualmente en desarrollo de mejora.
+
 # Spam Email Classifier (TF-IDF + ModeloSVC + FastAPI)
 
 Este proyecto implementa un sistema completo de clasificación de correos electrónicos SPAM vs HAM, utilizando procesamiento avanzado de texto (TF-IDF), modelos supervisados tradicionales y probando también con una red neuronal MLP basada en TensorFlow/Keras.  
