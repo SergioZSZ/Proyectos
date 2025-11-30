@@ -1,32 +1,19 @@
 import joblib
 import os
-import sys
 
-import tensorflow as tf
-from keras.models import Sequential
-from keras.layers import Dense, Dropout
-
-
-
-
-
-# ====================================================
-# FUNCION GENERAL PARA EVALUAR LISTAS DE DUPLAS
-# ====================================================
 def evaluar_y_guardar(nombre_archivo, ejemplos, modelo):
     """
     ejemplos = [("HAM", "mensaje..."), ("SPAM","mensaje..."), ...]
+    Modelo = sklearn (LinearSVC, LogisticRegression, etc.)
     """
 
-    # Separar mensajes para el modelo
+    # Sacamos solo los mensajes (X)
     mensajes = [msg for label, msg in ejemplos]
 
-    # Hacer predicciones
-    x = tf.constant(mensajes)
-    preds = modelo.predict(x)
-    preds_bin = (preds.flatten() >= 0.5).astype(int)
-    
-    # Preparar archivo
+    # Predicción del modelo sklearn
+    preds_bin = modelo.predict(mensajes)
+
+    # Crear carpeta si no existe
     os.makedirs("model/examples", exist_ok=True)
     f = open(f"model/examples/{nombre_archivo}.txt", "w", encoding="utf-8")
 
@@ -34,15 +21,17 @@ def evaluar_y_guardar(nombre_archivo, ejemplos, modelo):
     ham_ok = ham_bad = spam_ok = spam_bad = 0
 
     for (label_real, msg), pred in zip(ejemplos, preds_bin):
+
+        # A tu modelo sklearn SPAM = 1, HAM = 0
         label_pred = "SPAM" if pred == 1 else "HAM"
 
-        # Conteo
+        # Contar aciertos/fallos
         if label_real == "HAM":
             if label_pred == "HAM":
                 ham_ok += 1
             else:
                 ham_bad += 1
-        else:
+        else:  # real = SPAM
             if label_pred == "SPAM":
                 spam_ok += 1
             else:
@@ -53,6 +42,7 @@ def evaluar_y_guardar(nombre_archivo, ejemplos, modelo):
         f.write(f"Predicción: {label_pred}\n")
         f.write(f"Mensaje: {msg}\n\n")
 
+    # Resultados finales
     total = len(ejemplos)
     aciertos = ham_ok + spam_ok
     porcentaje = (aciertos / total) * 100
@@ -64,16 +54,10 @@ def evaluar_y_guardar(nombre_archivo, ejemplos, modelo):
     f.write(f"SPAM fallados: {spam_bad}\n")
     f.write(f"Acierto total: {porcentaje:.2f}%\n")
     f.close()
-
-
-# ====================================================
-# CARGAR MODELO
-# ====================================================
-
-
-
-#model = joblib.load("model/models/modelSVC.joblib")
-model = tf.keras.models.load_model("model/models/modelMLP.keras")
+    
+    
+    
+model = joblib.load("model/models/modelML.joblib")
 
 
 # ====================================================

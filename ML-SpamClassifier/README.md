@@ -41,7 +41,7 @@ ML-SpamClassifier/
          │── evaluateclf.py
          └── createModel.py
 │   ├── trainer_MLP.py
-│   ├── trainer_SVC.py
+│   ├── trainer_ML.py
 │   ├── model_selecter.py
 │   ├── predict_example.py
 │
@@ -68,30 +68,30 @@ Este preprocesado se inyecta en el TfidfVectorizer mediante el parámetro `prepr
 
 El archivo principal de entrenamiento es:
 
-```model/trainer_SVC.py``` para probar el modelo SVC Sequential
+```model/trainer_ML.py``` para probar el modelo SVC 
 ```model/trainer_MLP.py``` para probar el modelo MLP Sequential
 
-generarán respectivamente ```modelSVC.joblib``` ```modelMLP.joblib```
+generarán respectivamente ```modelML.joblib``` ```modelMLP.joblib```
 El pipeline incluye:
 
 - TfidfVectorizer  
-  - max_features = 50000  
-  - tokenizer = str.split  
-  - ngram_range = (1,3)  
+  - max_features = 40000  
+  - ngram_range = (1,1)  
   - min_df = 5  
   - max_df = 0.9  
-  - preprocessor = clean_text  
 
-- KerasClassifier (scikeras) con red neuronal MLP:  
-  - Capas: 16 → 8 → 1  
-  - Dropout  
-  - EarlyStopping  
-  - Función de pérdida: binary_crossentropy  
+posteriormente con GrindSearchCV se realiza una búsqueda de mejores parametros para el 
+modelo LinearSVC y LogisticRegresion para ver cual da mejores resultados.
+
+el modelo MLP incluye:
+- Vectorizer de 20000 tokens max, máxima secuencia 200, lower_and_strip_punctuation
+- Embedding(max_tokens, dim64)
+- 3 capas Dense siendo la última "sigmoid" para clasificación binaria
 
 Ejecutar entrenamiento:
 
 ```bash
-python -m model.trainer_SVC
+python -m model.trainer_ML
 python -m model.trainer_mlp
 ```
 
@@ -125,10 +125,10 @@ Ubicación: `model/data/SMSSpamCollection`
 - Ideal para entrenar la red neuronal MLP
 - Separador original: `,`   
 - Tiempos aproximados:  
-  - Entrenamiento LinearSVC + TF-IDF: 1-4 minutos  
-  - Entrenamiento MLP: 1-3 minutos  
+  - Entrenamiento GridSearchCV(combinaciones para mejor modelo/params): 37 minutos
+  - Entrenamiento mejor modelo: 2-3 minutos
 - Mucho mejor rendimiento y generalización  
-- Puede consumir más RAM por tener 50k features
+- Puede consumir más RAM por tener max 50k features
 
 
 

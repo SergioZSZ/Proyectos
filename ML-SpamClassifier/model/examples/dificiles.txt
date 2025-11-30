@@ -10,7 +10,7 @@ Mensaje: Your account has been temporarily restricted due to unusual login activ
 
 ================================
 Real: HAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: The security certificate on the analytics dashboard expired this morning. IT is renewing it.
 
 ================================
@@ -25,7 +25,7 @@ Mensaje: Could you verify whether the supplier responded to the revised purchase
 
 ================================
 Real: SPAM
-Predicción: SPAM
+Predicción: HAM
 Mensaje: Your payroll information could not be validated. Update your banking details to avoid payment delays.
 
 ================================
@@ -40,7 +40,7 @@ Mensaje: A confidential message has been assigned to your inbox. Access requires
 
 ================================
 Real: HAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: We detected delays in the email queue; some outgoing messages may arrive late.
 
 ================================
@@ -70,7 +70,7 @@ Mensaje: Your encrypted files could not be restored without confirming your secu
 
 ================================
 Real: HAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: IT informed us that access to archived emails may be slow while indexing completes.
 
 ================================
@@ -80,7 +80,7 @@ Mensaje: The IT department detected a breach in your session. Reset your passwor
 
 ================================
 Real: HAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: I updated the permissions on the shared drive; you should have write access.
 
 ================================
@@ -90,7 +90,7 @@ Mensaje: The invoice submitted yesterday has been rejected. Re-upload your crede
 
 ================================
 Real: HAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: Please confirm if the data export process finished successfully on your end.
 
 ================================
@@ -120,7 +120,7 @@ Mensaje: Immediate action required: your compliance forms are incomplete. Submit
 
 ================================
 Real: HAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: The authentication token for the dev environment expired. I requested a new one from IT.
 
 ================================
@@ -130,7 +130,7 @@ Mensaje: Your access to the corporate dashboard has been limited pending securit
 
 ================================
 Real: HAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: Let me know if the file uploaded correctly to the secure drop portal.
 
 ================================
@@ -151,8 +151,8 @@ Mensaje: Your HR profile contains outdated information. Update your credentials 
 
 
 =========== RESULTADOS ===========
-HAM acertados: 12
-HAM fallados: 3
-SPAM acertados: 11
-SPAM fallados: 4
-Acierto total: 76.67%
+HAM acertados: 5
+HAM fallados: 10
+SPAM acertados: 10
+SPAM fallados: 5
+Acierto total: 50.00%

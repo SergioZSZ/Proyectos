@@ -50,7 +50,7 @@ Mensaje: Your account will be suspended unless you click here now.
 
 ================================
 Real: HAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: Great work on the project, the client was very happy.
 
 ================================
@@ -70,12 +70,12 @@ Mensaje: You won a vacation to the Caribbean! Confirm your details.
 
 ================================
 Real: HAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: The server maintenance completed successfully this morning.
 
 ================================
 Real: SPAM
-Predicción: SPAM
+Predicción: HAM
 Mensaje: Act now! Only a few vouchers left.
 
 ================================
@@ -100,7 +100,7 @@ Mensaje: Earn €500/day working from home, no experience needed.
 
 ================================
 Real: HAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: I will be working remotely this afternoon.
 
 ================================
@@ -140,7 +140,7 @@ Mensaje: FINAL NOTICE: unpaid fees must be resolved today.
 
 ================================
 Real: HAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: Your order will be delivered tomorrow between 10 and 12.
 
 ================================
@@ -155,12 +155,12 @@ Mensaje: Could you update the spreadsheet with the latest numbers?
 
 ================================
 Real: SPAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: Your device is infected! Run an immediate system scan.
 
 ================================
 Real: HAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: I uploaded the documents to the shared drive.
 
 ================================
@@ -170,7 +170,7 @@ Mensaje: Double your Bitcoin instantly with this promo link.
 
 ================================
 Real: HAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: Let me know if you prefer the PDF or the Word version.
 
 ================================
@@ -180,7 +180,7 @@ Mensaje: This exclusive offer ends in 2 hours, act quickly!
 
 ================================
 Real: HAM
-Predicción: HAM
+Predicción: SPAM
 Mensaje: The office printer is working again, IT fixed it.
 
 ================================
@@ -191,8 +191,8 @@ Mensaje: Confirm your email to avoid permanent deactivation.
 
 
 =========== RESULTADOS ===========
-HAM acertados: 19
-HAM fallados: 0
+HAM acertados: 12
+HAM fallados: 7
 SPAM acertados: 17
 SPAM fallados: 2
-Acierto total: 94.74%
+Acierto total: 76.32%

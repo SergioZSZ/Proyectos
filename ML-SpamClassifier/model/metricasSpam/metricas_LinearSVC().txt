@@ -1,14 +1,14 @@
 ---- ENTRENAMIENTO ----
-Accuracy: 0.9971305132834666
-Precision: 0.9960132799956459
-Recall: 0.9979278284460077
-F1: 0.9969696350623438
+Accuracy: 0.9973304101109105
+Precision: 0.9963660120044098
+Recall: 0.9979959919839679
+F1: 0.9971803359078092
 
 ---- TEST ----
-Accuracy: 0.9875677069899407
-Precision: 0.9854284471509351
-Recall: 0.9883302432108191
-F1: 0.9868772120882112
+Accuracy: 0.9886510188289915
+Precision: 0.9862001521243073
+Recall: 0.9898571272766932
+F1: 0.9880252558240801
 
 ---- CLASSIFICATION REPORT (TEST) ----
               precision    recall  f1-score   support
@@ -21,6 +21,6 @@ F1: 0.9868772120882112
 weighted avg       0.99      0.99      0.99     38770
 
 
-Matriz de confusión (test):
-[[20164   268]
- [  214 18124]]
+Matriz de confusiÃ³n (test):
+[[20178   254]
+ [  186 18152]]

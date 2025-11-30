@@ -5,7 +5,7 @@ from app.schemas.mail import Tipo
 import tensorflow as tf
 #from model.funciones_auxiliares import clean_text, create_model
 router = APIRouter()
-modelsvc = joblib.load("model/models/modelSVC.joblib")
+modelsvc = joblib.load("model/models/modelML.joblib")
 model = tf.keras.models.load_model("model/models/modelMLP.keras")
 @router.post("/predictMLP",response_model=schemas.MailOutput, status_code=status.HTTP_200_OK)
 async def predict(mensaje_input: schemas.MailInput):
