@@ -8,7 +8,7 @@ router = APIRouter()
 modelsvc = joblib.load("model/models/modelML.joblib")
 model = tf.keras.models.load_model("model/models/modelMLP.keras")
 @router.post("/predictMLP",response_model=schemas.MailOutput, status_code=status.HTTP_200_OK)
-async def predict(mensaje_input: schemas.MailInput):
+async def predict_mlp(mensaje_input: schemas.MailInput):
     tipo_pred: str
     x = tf.constant([mensaje_input.message])
     
@@ -27,8 +27,8 @@ async def predict(mensaje_input: schemas.MailInput):
     return mensaje_output
 
 
-@router.post("/predictSVC",response_model=schemas.MailOutput, status_code=status.HTTP_200_OK)
-async def predict(mensaje_input: schemas.MailInput):
+@router.post("/predictLSVC",response_model=schemas.MailOutput, status_code=status.HTTP_200_OK)
+async def predict_lsvc(mensaje_input: schemas.MailInput):
     tipo_pred: str
     pred = modelsvc.predict([mensaje_input.message])
     
