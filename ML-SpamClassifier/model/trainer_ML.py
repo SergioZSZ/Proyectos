@@ -77,7 +77,7 @@ param_dist = [
 ]
 
 # subset para la búsqueda
-txgrid, _, tygrid, _ = train_test_split(
+xseach, _, ysearch, _ = train_test_split(
     trainx, trainy,
     train_size=0.2,
     stratify=trainy,
@@ -88,7 +88,7 @@ txgrid, _, tygrid, _ = train_test_split(
 random_search = RandomizedSearchCV(
     estimator=pipe,
     param_distributions=param_dist,
-    n_iter=25,              # pruebas totales (profesional: 20–50)
+    n_iter=25,              # pruebas totales
     cv=5,
     scoring="f1",
     n_jobs=-1,
@@ -96,7 +96,7 @@ random_search = RandomizedSearchCV(
 )
 
 entrenado = time.time()
-random_search.fit(txgrid, tygrid)
+random_search.fit(xseach, ysearch)
 finentrenado = time.time()
 
 print("Mejores params:", random_search.best_params_)

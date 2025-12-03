@@ -128,8 +128,8 @@ Ubicación: `model/data/SMSSpamCollection`
  `trainer_MLP`:
   - Entrenamiento del modelo MLP: 2-3 minutos
  `trainer_ML`:
-  - Entrenamiento RandomizedSearchCV(combinaciones para mejor modelo/params): 37 minutos
-  - Entrenamiento mejor modelo de GridSearchCV: 2-3 minutos
+  - Entrenamiento RandomizedSearchCV(combinaciones para mejor modelo/params): 6-7 minutos
+  - Entrenamiento mejor modelo encontrado con RandomizedSearchCV: 1 minuto
 - Mucho mejor rendimiento y generalización  
 - Puede consumir más RAM por tener max 50k features
 

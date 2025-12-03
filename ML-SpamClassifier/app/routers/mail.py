@@ -5,10 +5,10 @@ from app.schemas.mail import Tipo
 import tensorflow as tf
 router = APIRouter()
 
-pipelsvc = joblib.load("model/models/modelML.joblib")
+pipelsvc = joblib.load("model/models/modelML/modelML.joblib")
 
 vectorizer = joblib.load("model/models/modelMLP/vectorizer.joblib")
-model = tf.keras.models.load_model("model/models/modelMLP/model.keras")
+model = tf.keras.models.load_model("model/models/modelMLP/modelMLP.keras")
 
 
 @router.post("/predictMLP",response_model=schemas.MailOutput, status_code=status.HTTP_200_OK)

@@ -58,7 +58,7 @@ def evaluar_y_guardar(nombre_archivo, ejemplos, modelo):
     
     
     
-model = joblib.load("model/models/modelML.joblib")
+model = joblib.load("model/models/modelML/modelML.joblib")
 
 
 # ====================================================
