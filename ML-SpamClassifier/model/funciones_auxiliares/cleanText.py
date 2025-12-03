@@ -6,7 +6,7 @@ from nltk.stem import WordNetLemmatizer
 nltk.download("stopwords")
 nltk.download("WordNetLemmatizer")
 '''
-STOPWORDS = stopwords.words("english")
+STOPWORDS_ENGLISH = stopwords.words("english")
 lem = WordNetLemmatizer()
 
 def clean_text(text):
@@ -23,7 +23,7 @@ def clean_text(text):
     #quitar stopwords y lematizar
     tokens = []
     for tok in text.split():
-        if tok in STOPWORDS:
+        if tok in STOPWORDS_ENGLISH:
             continue
         tok = lem.lemmatize(tok)
         tokens.append(tok)

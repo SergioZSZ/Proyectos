@@ -4,7 +4,7 @@ import time
 import joblib
 import pandas as pd
 
-from model.funciones_auxiliares import clean_text,evaluate_clf, STOPWORDS
+from model.funciones_auxiliares import clean_text,evaluate_clf
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.preprocessing import LabelEncoder
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -14,32 +14,34 @@ from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
 
 
-
+#cargamos dataset
 DATA_DIR = "model/data/spam_Emails_data.csv"
 df = pd.read_csv(DATA_DIR,
                     sep=",",
                     header=0,
                     )
-
+#rellenamos vacios
 df["text"].fillna("")
 
+#preprocesado para medir tiempo
 preprocesado=time.time()
 df["clean_text"]= df["text"].apply(clean_text)
 finpreprocesado=time.time()
 x=df["clean_text"]
 y= df["label"]
 
-
+#separacion traintest
 trainx,testx,trainy,testy = train_test_split(x,y,test_size=0.2, random_state=42, stratify=y)
 
+#codificacion labels
 encoder = LabelEncoder()
 trainy = encoder.fit_transform(trainy)
 testy = encoder.transform(testy)
-# 
+
+#pipe con tfidf vectorizer y modelo(valores basics antes del gridSearch)
 pipe = Pipeline([
     ("vectorizer",TfidfVectorizer(
         ngram_range=(1,1),
-        #stop_words = STOPWORDS_ENGLISH,
         max_df=0.9,
         min_df=5,
         max_features=50000)),
