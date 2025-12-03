@@ -4,7 +4,7 @@ import time
 import joblib
 import pandas as pd
 
-from model.funciones_auxiliares import clean_text,evaluate_clf
+from model.funciones_auxiliares import clean_text_MLP,evaluate_clf
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.preprocessing import LabelEncoder
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -25,7 +25,7 @@ df["text"].fillna("")
 
 #preprocesado para medir tiempo
 preprocesado=time.time()
-df["clean_text"]= df["text"].apply(clean_text)
+df["clean_text"]= df["text"].apply(clean_text_MLP)
 finpreprocesado=time.time()
 x=df["clean_text"]
 y= df["label"]

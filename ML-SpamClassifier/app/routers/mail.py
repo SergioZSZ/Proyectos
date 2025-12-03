@@ -3,18 +3,24 @@ from app import schemas
 import joblib
 from app.schemas.mail import Tipo
 import tensorflow as tf
-#from model.funciones_auxiliares import clean_text, create_model
 router = APIRouter()
-modelsvc = joblib.load("model/models/modelML.joblib")
-model = tf.keras.models.load_model("model/models/modelMLP.keras")
+
+pipelsvc = joblib.load("model/models/modelML.joblib")
+
+vectorizer = joblib.load("model/models/modelMLP/vectorizer.joblib")
+model = tf.keras.models.load_model("model/models/modelMLP/model.keras")
+
+
 @router.post("/predictMLP",response_model=schemas.MailOutput, status_code=status.HTTP_200_OK)
 async def predict_mlp(mensaje_input: schemas.MailInput):
     tipo_pred: str
-    x = tf.constant([mensaje_input.message])
+    x_vec = vectorizer.transform([mensaje_input.message])
+    x_dense = x_vec.toarray()
     
-    pred = model.predict(x)
+    pred = model.predict(x_dense)
+    prob = float(pred[0][0])
     
-    if pred[0] < 0.5:
+    if prob < 0.5:
         tipo_pred = Tipo.ham
     else:
         tipo_pred = Tipo.spam
@@ -30,7 +36,7 @@ async def predict_mlp(mensaje_input: schemas.MailInput):
 @router.post("/predictLSVC",response_model=schemas.MailOutput, status_code=status.HTTP_200_OK)
 async def predict_lsvc(mensaje_input: schemas.MailInput):
     tipo_pred: str
-    pred = modelsvc.predict([mensaje_input.message])
+    pred = pipelsvc.predict([mensaje_input.message])
     
     if pred[0] == 0:
         tipo_pred = Tipo.ham

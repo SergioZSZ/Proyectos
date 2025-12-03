@@ -1,8 +1,8 @@
 import os
 import time
 import pandas as pd
-
-from .funciones_auxiliares.cleanText import clean_text
+import joblib
+from .funciones_auxiliares.cleanText import clean_text_MLP
 from .funciones_auxiliares.evaluateclf import evaluate_clf
 
 from sklearn.model_selection import train_test_split
@@ -15,8 +15,8 @@ from keras.layers import Dropout,Dense
 from keras.callbacks import EarlyStopping
 
 
+
 ###cargamos csv
-data = time.time()
 DATA_DIR = "model/data/spam_Emails_data.csv"
 df = pd.read_csv(DATA_DIR,
                     sep=",",
@@ -25,7 +25,6 @@ df = pd.read_csv(DATA_DIR,
 
 X=df["text"].fillna("")
 y = df["label"]
-findata = time.time()
 #train test split
 trainx,testx,trainy,testy = train_test_split(X,y,test_size=0.2,random_state=42,stratify=y)
 #train val split
@@ -42,7 +41,7 @@ classes_names = encoder.classes_
 
     #tfidfVectorizer
 vectorizer = TfidfVectorizer(
-    preprocessor=clean_text,
+    preprocessor=clean_text_MLP,
     tokenizer=str.split,
     max_features=20000,
     ngram_range=(1,2),
@@ -65,7 +64,8 @@ model = Sequential([
 ])
 model.compile(
     optimizer="adam",
-    loss="binary_crossentropy"
+    loss="binary_crossentropy",
+    metrics=["accuracy","precision","recall"]
 )
 #earlyStopping
 early_stopping = EarlyStopping(
@@ -88,26 +88,21 @@ history = model.fit(
 
 finentrenado=time.time()
 
-evaluado = time.time()
 
 evaluate_clf("MLP",model,trainx,testx,trainy,testy)
 
-finevaluado = time.time()
 
-export= time.time()
 os.makedirs("model/models",exist_ok=True)
-model.save("model/models/modelMLP.keras")
-exportfin= time.time()
+os.makedirs("model/models/modelMLP",exist_ok=True)
+model.save("model/models/modelMLP/model.keras")
+joblib.dump(encoder,"model/models/modelMLP/enc.joblib")
+joblib.dump(vectorizer,"model/models/modelMLP/vectorizer.joblib")
 
-mindata,secsdata = divmod(findata-data,60)
 minEntr,secsEntr=divmod(finentrenado-entrenado,60)
-minEv,secsEv=divmod(finevaluado-evaluado,60)
-minexp,secexp=divmod(exportfin-export,60)
 
-print("datset: ",mindata,secsdata)
+
 print("entreno: ",minEntr,secsEntr)
-print("ev: ",minEv,secsEv)
-print("exp: ",minexp,secexp)
+
 
 
 

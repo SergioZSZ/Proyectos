@@ -1,0 +1,26 @@
+---- ENTRENAMIENTO ----
+Accuracy: 0.9946801650760898
+Precision: 0.9923126527287537
+Recall: 0.9964725128659555
+F1: 0.9943882322931723
+
+---- TEST ----
+Accuracy: 0.9861494415929432
+Precision: 0.9834872351982619
+Recall: 0.9872948361415562
+F1: 0.9853873574791151
+
+---- CLASSIFICATION REPORT (TEST) ----
+              precision    recall  f1-score   support
+
+         ham       0.99      0.99      0.99     20432
+        spam       0.98      0.99      0.99     18339
+
+    accuracy                           0.99     38771
+   macro avg       0.99      0.99      0.99     38771
+weighted avg       0.99      0.99      0.99     38771
+
+
+Matriz de confusión (test):
+[[20128   304]
+ [  233 18106]]

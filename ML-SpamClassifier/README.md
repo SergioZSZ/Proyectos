@@ -126,9 +126,12 @@ Ubicación: `model/data/SMSSpamCollection`
 - Muy variado, incluye spam moderno  
 - Ideal para entrenar la red neuronal MLP
 - Separador original: `,`   
-- Tiempos aproximados:  
+- Tiempos aproximados:
+ `trainer_MLP`:
+  - Entrenamiento del modelo MLP: 2-3 minutos
+ `trainer_ML`:
   - Entrenamiento GridSearchCV(combinaciones para mejor modelo/params): 37 minutos
-  - Entrenamiento mejor modelo: 2-3 minutos
+  - Entrenamiento mejor modelo de GridSearchCV: 2-3 minutos
 - Mucho mejor rendimiento y generalización  
 - Puede consumir más RAM por tener max 50k features
 

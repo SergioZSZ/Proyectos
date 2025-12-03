@@ -13,20 +13,23 @@ from keras.layers import Dense, Dropout
 # ====================================================
 # FUNCION GENERAL PARA EVALUAR LISTAS DE DUPLAS
 # ====================================================
-def evaluar_y_guardar(nombre_archivo, ejemplos, modelo):
+def evaluar_y_guardar(nombre_archivo, ejemplos, modelo, vectorizer):
     """
     ejemplos = [("HAM", "mensaje..."), ("SPAM","mensaje..."), ...]
     """
 
-    # Separar mensajes para el modelo
+    #Separar mensajes para el modelo
     mensajes = [msg for label, msg in ejemplos]
 
-    # Hacer predicciones
-    x = tf.constant(mensajes)
-    preds = modelo.predict(x)
-    preds_bin = (preds.flatten() >= 0.5).astype(int)
+    #Vectorizar igual que en entrenamiento
+    X_vec = vectorizer.transform(mensajes)   #sparse (n, n_features)
+    X_dense = X_vec.toarray()                #dense (n, n_features)
+
+    #Hacer predicciones con el modelo Keras
+    preds = modelo.predict(X_dense)          #shape (n, 1)
+    preds_bin = (preds.flatten() >= 0.5).astype(int)  #0= HAM, 1= SPAM
     
-    # Preparar archivo
+    #Preparar archivo
     os.makedirs("model/examples", exist_ok=True)
     f = open(f"model/examples/{nombre_archivo}.txt", "w", encoding="utf-8")
 
@@ -67,12 +70,12 @@ def evaluar_y_guardar(nombre_archivo, ejemplos, modelo):
 
 
 # ====================================================
-# CARGAR MODELO
+# CARGAR MODELO Y VECTORIZADOR
 # ====================================================
 
 
-
-model = tf.keras.models.load_model("model/models/modelMLP.keras")
+vect = joblib.load("model/models/modelMLP/vectorizer.joblib")
+model = tf.keras.models.load_model("model/models/modelMLP/modelMLP.keras")
 
 
 # ====================================================
