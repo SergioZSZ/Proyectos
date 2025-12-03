@@ -2,7 +2,7 @@ Actualmente en desarrollo de mejora.
 
 # Spam Email Classifier (TF-IDF + ModeloSVC + FastAPI)
 
-Este proyecto implementa un sistema completo de clasificación de correos electrónicos SPAM vs HAM, utilizando procesamiento avanzado de texto (TF-IDF), modelos supervisados tradicionales y probando también con una red neuronal MLP basada en TensorFlow/Keras.  
+Este proyecto implementa un sistema completo de clasificación de correos electrónicos SPAM vs HAM, utilizando procesamiento avanzado de texto (TF-IDF), modelos supervisados tradicionales buscando el mejor modelo y mejores parámetros posibles con RandomizedSearchCV y probando también con una red neuronal MLP basada en TensorFlow/Keras.  
 Incluye una API FastAPI para predicciones en tiempo real.
 
 # Tecnologías utilizadas
@@ -44,9 +44,8 @@ ML-SpamClassifier/
          └── createModel.py
 │   ├── trainer_MLP.py
 │   ├── trainer_ML.py
-│   ├── model_selecter.py
-│   ├── predict_example.py
-│
+│   ├── predict_example_ML.py
+│   └── predict_example_mlp.py
 └── README.md
 └── requirements.txt
 ```
@@ -73,7 +72,7 @@ El archivo principal de entrenamiento es:
 ```model/trainer_ML.py``` para probar el modelo SVC 
 ```model/trainer_MLP.py``` para probar el modelo MLP Sequential
 
-generarán respectivamente ```modelML.joblib``` ```modelMLP.joblib```
+generarán respectivamente ```modelML.joblib``` ```modelMLP.keras```
 El pipeline incluye:
 
 - TfidfVectorizer  
@@ -82,12 +81,11 @@ El pipeline incluye:
   - min_df = 5  
   - max_df = 0.9  
 
-posteriormente con GrindSearchCV se realiza una búsqueda de mejores parametros para el 
+posteriormente con RandomizedSearchCV se realiza una búsqueda de mejores parametros para el 
 modelo LinearSVC y LogisticRegresion para ver cual da mejores resultados.
 
 el modelo MLP incluye:
-- Vectorizer de 20000 tokens max, máxima secuencia 200, lower_and_strip_punctuation
-- Embedding(max_tokens, dim64)
+- tfidfVectorizer con preprocesado propio, n_grams(1,2), eliminación de palabras demasiado    recurrentes y palabras poco frecuentes
 - 3 capas Dense siendo la última "sigmoid" para clasificación binaria
 
 Ejecutar entrenamiento:
@@ -130,7 +128,7 @@ Ubicación: `model/data/SMSSpamCollection`
  `trainer_MLP`:
   - Entrenamiento del modelo MLP: 2-3 minutos
  `trainer_ML`:
-  - Entrenamiento GridSearchCV(combinaciones para mejor modelo/params): 37 minutos
+  - Entrenamiento RandomSearchCV(combinaciones para mejor modelo/params): 37 minutos
   - Entrenamiento mejor modelo de GridSearchCV: 2-3 minutos
 - Mucho mejor rendimiento y generalización  
 - Puede consumir más RAM por tener max 50k features

@@ -3,9 +3,10 @@ import sys
 import time
 import joblib
 import pandas as pd
+from scipy.stats import loguniform
 
 from model.funciones_auxiliares import clean_text_MLP,evaluate_clf
-from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.model_selection import RandomizedSearchCV, train_test_split, GridSearchCV
 from sklearn.preprocessing import LabelEncoder
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.svm import LinearSVC
@@ -20,7 +21,7 @@ df = pd.read_csv(DATA_DIR,
                     header=0,
                     )
 #rellenamos vacios
-df["text"].fillna("")
+df["text"]=df["text"].fillna("")
 
 #preprocesado para medir tiempo
 preprocesado=time.time()
@@ -48,58 +49,67 @@ pipe = Pipeline([
     ("model", LinearSVC(max_iter=3000))
 ])
 
-#grid
-params = [
-    #1 linearSVC
+# parámetros RandomSearch
+param_dist = [
+    # 1) LinearSVC
     {
-        "vectorizer__ngram_range":[(1,1),(1,2)],
-        "vectorizer__max_df":[0.9,0.95],
-        "vectorizer__min_df":[5,10],
-        "vectorizer__max_features":[50000],
-        
-        "model":[LinearSVC()],
-        "model__C":[0.01,0.1,1,10],  #penalización puesta a los errores
-        "model__max_iter": [3000, 7000]
-    },
-    #2 Logistic
-   {
         "vectorizer__ngram_range": [(1,1), (1,2)],
         "vectorizer__max_df": [0.9, 0.95],
         "vectorizer__min_df": [5, 10],
         "vectorizer__max_features": [50000],
-        # "vectoricer__stop_words": [None, STOPWORDS_ENGLISH],  # opcional
+
+        "model": [LinearSVC()],
+        "model__C": loguniform(1e-2, 10),   # sustituye [0.01, 0.1, 1, 10]
+        "model__max_iter": [3000, 7000]
+    },
+
+    # 2) Logistic Regression
+    {
+        "vectorizer__ngram_range": [(1,1), (1,2)],
+        "vectorizer__max_df": [0.9, 0.95],
+        "vectorizer__min_df": [5, 10],
+        "vectorizer__max_features": [50000],
 
         "model": [LogisticRegression()],
-        "model__C": [0.1, 1, 10],
+        "model__C": loguniform(1e-1, 10),   # sustituye [0.1, 1, 10]
         "model__max_iter": [3000, 7000]
     }
 ]
 
-#entrenamos el grid con una version mas pequeña del train
+# subset para la búsqueda
 txgrid, _, tygrid, _ = train_test_split(
     trainx, trainy,
     train_size=0.2,
     stratify=trainy,
     random_state=42
 )
-grid = GridSearchCV(pipe,params,cv=5,scoring="f1",n_jobs=-1)
 
-entrenado=time.time()
-grid.fit(txgrid,tygrid)  
-finentrenado=time.time()
+# RandomizedSearchCV
+random_search = RandomizedSearchCV(
+    estimator=pipe,
+    param_distributions=param_dist,
+    n_iter=25,              # pruebas totales (profesional: 20–50)
+    cv=5,
+    scoring="f1",
+    n_jobs=-1,
+    random_state=42
+)
 
-print("Mejores params: ", grid.best_params_)
+entrenado = time.time()
+random_search.fit(txgrid, tygrid)
+finentrenado = time.time()
+
+print("Mejores params:", random_search.best_params_)
 
 #entrenamos el mejor modelo encontrado
-best_pipe = grid.best_estimator_
+best_pipe = random_search.best_estimator_
 entrenado2=time.time()
 best_pipe.fit(trainx,trainy)  
 finentrenado2=time.time()
 
 
 
-best_pipe = grid.best_estimator_
-name = str(grid.best_params_.get("model"))
+name = str(random_search.best_params_.get("model"))
 #metricas con predict
 evaluado=time.time()
 evaluate_clf(name,best_pipe, trainx,testx,trainy,testy)
