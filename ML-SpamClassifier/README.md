@@ -128,7 +128,7 @@ Ubicación: `model/data/SMSSpamCollection`
  `trainer_MLP`:
   - Entrenamiento del modelo MLP: 2-3 minutos
  `trainer_ML`:
-  - Entrenamiento RandomSearchCV(combinaciones para mejor modelo/params): 37 minutos
+  - Entrenamiento RandomizedSearchCV(combinaciones para mejor modelo/params): 37 minutos
   - Entrenamiento mejor modelo de GridSearchCV: 2-3 minutos
 - Mucho mejor rendimiento y generalización  
 - Puede consumir más RAM por tener max 50k features
@@ -177,9 +177,11 @@ uvicorn app.main:app --reload
 Documentación:
 http://localhost:8000/docs
 
-# Endpoint principal
+# Endpoints principales
 
-POST `/mail/predict`
+POST `/mail/predictMLP` para predecir con `modelMLP.keras`
+POST `/mail/predictML`  para predecir con `modelML.joblib`
+
 
 Body:
 ```json
