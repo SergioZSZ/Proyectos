@@ -1,0 +1,198 @@
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: Hi John, just confirming our meeting for tomorrow.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: WIN a free iPhone today! Click here to claim your prize.
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: Thanks for sending the report, I’ll review it this afternoon.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: Get rich fast with this simple online trick!
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: Can you share the updated schedule when you have time?
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: Limited-time offer: 90% off all products!
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: The package has arrived at the office, you can pick it up.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: Congratulations, you've been selected for a cash reward!
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: Let me know if you need help with the presentation.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: Your account will be suspended unless you click here now.
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: Great work on the project, the client was very happy.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: Claim your free crypto bonus before midnight!
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: I attached the notes from today’s call, please check them.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: You won a vacation to the Caribbean! Confirm your details.
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: The server maintenance completed successfully this morning.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: Act now! Only a few vouchers left.
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: Lunch at 1 PM still works for me, see you there.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: This miracle pill burns fat without exercise.
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: Here are the photos from yesterday's event.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: Earn €500/day working from home, no experience needed.
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: I will be working remotely this afternoon.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: Update your banking information to avoid penalties.
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: The meeting room is booked from 11 to 12 as requested.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: Your password is expiring, verify your account now.
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: Thanks for your quick response earlier.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: Get instant access to thousands of movies for free.
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: Please review the attached draft when you have a moment.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: FINAL NOTICE: unpaid fees must be resolved today.
+
+================================
+Real: HAM
+Predicción: SPAM
+Mensaje: Your order will be delivered tomorrow between 10 and 12.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: Don't miss out on your FREE gift card, confirm now.
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: Could you update the spreadsheet with the latest numbers?
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: Your device is infected! Run an immediate system scan.
+
+================================
+Real: HAM
+Predicción: SPAM
+Mensaje: I uploaded the documents to the shared drive.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: Double your Bitcoin instantly with this promo link.
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: Let me know if you prefer the PDF or the Word version.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: This exclusive offer ends in 2 hours, act quickly!
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: The office printer is working again, IT fixed it.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: Confirm your email to avoid permanent deactivation.
+
+
+
+=========== RESULTADOS ===========
+HAM acertados: 17
+HAM fallados: 2
+SPAM acertados: 19
+SPAM fallados: 0
+Acierto total: 94.74%

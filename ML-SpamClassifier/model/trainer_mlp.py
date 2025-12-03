@@ -94,7 +94,8 @@ evaluate_clf("MLP",model,trainx,testx,trainy,testy)
 
 os.makedirs("model/models",exist_ok=True)
 os.makedirs("model/models/modelMLP",exist_ok=True)
-model.save("model/models/modelMLP/model.keras")
+
+model.save("model/models/modelMLP/modelMLP.keras")
 joblib.dump(encoder,"model/models/modelMLP/enc.joblib")
 joblib.dump(vectorizer,"model/models/modelMLP/vectorizer.joblib")
 

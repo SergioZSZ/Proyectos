@@ -1,0 +1,158 @@
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: Hi team, the compliance department requires a quick review of the attached policy update.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: Your account has been temporarily restricted due to unusual login activity. Please verify your identity.
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: The security certificate on the analytics dashboard expired this morning. IT is renewing it.
+
+================================
+Real: SPAM
+Predicción: HAM
+Mensaje: The document you attempted to access requires re-authentication. Log in through the updated security portal.
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: Could you verify whether the supplier responded to the revised purchase order from last week?
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: Your payroll information could not be validated. Update your banking details to avoid payment delays.
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: Reminder: VPN access will be intermittent tonight due to scheduled updates.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: A confidential message has been assigned to your inbox. Access requires verification.
+
+================================
+Real: HAM
+Predicción: SPAM
+Mensaje: We detected delays in the email queue; some outgoing messages may arrive late.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: The company-wide security audit found inconsistencies in your profile. Resolve them immediately.
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: Thanks for updating the financial forecast. Please also review the new expense entries.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: Your mailbox storage is over quota. Increase your capacity using the admin panel.
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: Legal needs confirmation on clause revisions for the new contract draft.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: Your encrypted files could not be restored without confirming your security credentials.
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: IT informed us that access to archived emails may be slow while indexing completes.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: The IT department detected a breach in your session. Reset your password now.
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: I updated the permissions on the shared drive; you should have write access.
+
+================================
+Real: SPAM
+Predicción: HAM
+Mensaje: The invoice submitted yesterday has been rejected. Re-upload your credentials to continue.
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: Please confirm if the data export process finished successfully on your end.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: Your multi-factor authentication token has expired. Generate a new token through the secure gateway.
+
+================================
+Real: HAM
+Predicción: SPAM
+Mensaje: Analytics flagged an unusual spike in traffic, but operations confirmed it was expected.
+
+================================
+Real: SPAM
+Predicción: HAM
+Mensaje: Due to suspicious activity, your SSO session has been terminated. Restore access through the link.
+
+================================
+Real: HAM
+Predicción: SPAM
+Mensaje: Could you recheck the formatting of the quarterly report? Some headers appear misaligned.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: Immediate action required: your compliance forms are incomplete. Submit verification details now.
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: The authentication token for the dev environment expired. I requested a new one from IT.
+
+================================
+Real: SPAM
+Predicción: HAM
+Mensaje: Your access to the corporate dashboard has been limited pending security confirmation.
+
+================================
+Real: HAM
+Predicción: HAM
+Mensaje: Let me know if the file uploaded correctly to the secure drop portal.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: A restricted document has been shared with you, but your identity could not be confirmed.
+
+================================
+Real: HAM
+Predicción: SPAM
+Mensaje: The internal monitoring system reported elevated load earlier, but it's stable now.
+
+================================
+Real: SPAM
+Predicción: SPAM
+Mensaje: Your HR profile contains outdated information. Update your credentials to avoid lockout.
+
+
+
+=========== RESULTADOS ===========
+HAM acertados: 11
+HAM fallados: 4
+SPAM acertados: 11
+SPAM fallados: 4
+Acierto total: 73.33%

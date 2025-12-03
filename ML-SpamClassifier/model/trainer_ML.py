@@ -11,7 +11,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.svm import LinearSVC
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
-from sklearn.impute import SimpleImputer
 
 
 #cargamos dataset
@@ -109,7 +108,8 @@ finevaluado=time.time()
 
 
 os.makedirs("model/models",exist_ok=True)
-joblib.dump(best_pipe,"model/models/modelML.joblib")
+os.makedirs("model/models/modelML",exist_ok=True)
+joblib.dump(best_pipe,"model/models/modelML/modelML.joblib")
 
 
 #dar los minutos y segundos de cada proceso

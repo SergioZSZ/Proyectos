@@ -31,7 +31,8 @@ def evaluar_y_guardar(nombre_archivo, ejemplos, modelo, vectorizer):
     
     #Preparar archivo
     os.makedirs("model/examples", exist_ok=True)
-    f = open(f"model/examples/{nombre_archivo}.txt", "w", encoding="utf-8")
+    os.makedirs("model/examples/MLP", exist_ok=True)
+    f = open(f"model/examples/MLP/{nombre_archivo}.txt", "w", encoding="utf-8")
 
     # Contadores
     ham_ok = ham_bad = spam_ok = spam_bad = 0
@@ -193,6 +194,6 @@ dificiles = [
 # ====================================================
 # EJECUCIÓN
 # ====================================================
-evaluar_y_guardar("faciles", faciles, model)
-evaluar_y_guardar("dificiles", dificiles, model)
+evaluar_y_guardar("faciles", faciles, model,vect)
+evaluar_y_guardar("dificiles", dificiles, model,vect)
 

@@ -15,7 +15,8 @@ def evaluar_y_guardar(nombre_archivo, ejemplos, modelo):
 
     # Crear carpeta si no existe
     os.makedirs("model/examples", exist_ok=True)
-    f = open(f"model/examples/{nombre_archivo}.txt", "w", encoding="utf-8")
+    os.makedirs("model/examples/ML", exist_ok=True)
+    f = open(f"model/examples/ML/{nombre_archivo}.txt", "w", encoding="utf-8")
 
     # Contadores
     ham_ok = ham_bad = spam_ok = spam_bad = 0
