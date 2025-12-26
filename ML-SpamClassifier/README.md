@@ -65,7 +65,7 @@ El proceso se realiza en la función `clean_text()`:
 
 Este preprocesado se inyecta en el TfidfVectorizer mediante el parámetro `preprocessor=`.
 
-# Entrenamiento del modelo con MLP
+# Entrenamiento de los modelos
 
 El archivo principal de entrenamiento es:
 
@@ -81,9 +81,16 @@ El pipeline incluye:
   - min_df = 5  
   - max_df = 0.9  
 
-Posteriormente, se utiliza RandomizedSearchCV para realizar la búsqueda de hiperparámetros óptimos en los modelos LinearSVC y LogisticRegression, comparando su rendimiento.
+modelos clásicos:
+  Baseline: LogisticRegression + TF-IDF → F1
+  Final model: LinearSVC + TF-IDF → F1
 
-Dado el carácter desbalanceado del problema de clasificación de spam, la optimización se guía por la métrica F1-score, que equilibra precision y recall, permitiendo penalizar tanto los falsos positivos como los falsos negativos.
+Se utiliza RandomizedSearchCV para realizar la búsqueda de hiperparámetros óptimos en los modelos LinearSVC y LogisticRegression, comparando su rendimiento.
+
+Dado el carácter desbalanceado del problema de clasificación de spam, la optimización se guía por la métrica F1-score, que equilibra precision y recall, permitiendo penalizar tanto los falsos positivos como los falsos negativos. El modelo final seleccionado acaba siendo LinearSVC debido a su
+mejor generalización y rendimiento.
+
+
 
 el modelo MLP incluye:
 - tfidfVectorizer con preprocesado propio, n_grams(1,2), eliminación de palabras demasiado    recurrentes y palabras poco frecuentes
