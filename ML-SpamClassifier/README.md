@@ -81,8 +81,9 @@ El pipeline incluye:
   - min_df = 5  
   - max_df = 0.9  
 
-posteriormente con RandomizedSearchCV se realiza una búsqueda de mejores parametros para el 
-modelo LinearSVC y LogisticRegresion para ver cual da mejores resultados.
+Posteriormente, se utiliza RandomizedSearchCV para realizar la búsqueda de hiperparámetros óptimos en los modelos LinearSVC y LogisticRegression, comparando su rendimiento.
+
+Dado el carácter desbalanceado del problema de clasificación de spam, la optimización se guía por la métrica F1-score, que equilibra precision y recall, permitiendo penalizar tanto los falsos positivos como los falsos negativos.
 
 el modelo MLP incluye:
 - tfidfVectorizer con preprocesado propio, n_grams(1,2), eliminación de palabras demasiado    recurrentes y palabras poco frecuentes
